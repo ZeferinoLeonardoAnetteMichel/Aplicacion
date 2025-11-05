@@ -8,11 +8,11 @@
    ##### **Nombre 1:** Regis Reyes Jazmin Arleth.
    ##### **Num.control:** 23308060610258
    ##### Fotografia
-   ![regis](static\img/regis.png)
+   ![regis](static/img/regis.png)
    ##### **Nombre 2:** Zeferino Leonardo Anette Michel
    ##### **Num.control:** 23308060610457
    ##### Fotografia
-   ![zeferino](static\img/anette.png)
+   ![zeferino](static/img/anette.png)
    ##### **Grupo:** 5-D
    ##### **Especialidad:** Programación
 ## Análisis de la Base de Datos 

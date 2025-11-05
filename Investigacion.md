@@ -44,31 +44,31 @@ La información se obtuvo a partir de sus páginas oficiales, reseñas de usuari
 
 ### Capturas de pantalla de apoyo
 #### Cronometer
-![Cronometer](static\img/image1.png)
-![Cronometer](static\img/image2.png)
-![Cronometer](static\img/image3.png)
-![Cronometer](static\img/image4.png)
+![Cronometer](static/img/image1.png)
+![Cronometer](static/img/image2.png)
+![Cronometer](static/img/image3.png)
+![Cronometer](static/img/image4.png)
 #### FatSecret
-![FatSecret](static\img/image5.png)
-![FatSecret](static\img/image6.png)
-![FatSecret](static\img/image7.png)
+![FatSecret](static/img/image5.png)
+![FatSecret](static/img/image6.png)
+![FatSecret](static/img/image7.png)
 #### MyFitnessPal
-![MyFitnessPal](static\img/image8.png)
-![MyFitnessPal](static\img/image9.png)
-![MyFitnessPal](static\img/image10.png)
+![MyFitnessPal](static/img/image8.png)
+![MyFitnessPal](static/img/image9.png)
+![MyFitnessPal](static/img/image10.png)
 ### Diseño y Resultados de Encuesta
 Para poder crear nuestra aplicación realizamos una encuesta de 12 preguntas que utilizaremos para saber qué es lo puede llevar nuestra aplicación con la opinión de las personas nos podemos guiar para saber qué es lo que ellos buscan de una aplicación. Las preguntas que se realizaron fueron preguntas abiertas y otras para seleccionar.
-![Img encuesta](static\img/cap.png)
-![Img encuesta](static\img/cap1.png)
-![Img encuesta](static\img/cap2.png)
-![Img encuesta](static\img/cap3.png)
+![Img encuesta](static/img/cap.png)
+![Img encuesta](static/img/cap1.png)
+![Img encuesta](static/img/cap2.png)
+![Img encuesta](static/img/cap3.png)
 ### Resultados de las preguntas
 En total fueron 32 personas a los que respondieron esta encuesta y fueron encuestados. Aquí se muestran las gráficas de los resultados de la encuesta.
-![Img encuesta](static\img/cap4.png)
-![Img encuesta](static\img/cap5.png)
-![Img encuesta](static\img/cap6.png)
-![Img encuesta](static\img/cap7.png)
-![Img encuesta](static\img/cap8.png)
+![Img encuesta](static/img/cap4.png)
+![Img encuesta](static/img/cap5.png)
+![Img encuesta](static/img/cap6.png)
+![Img encuesta](static/img/cap7.png)
+![Img encuesta](static/img/cap8.png)
 Podemos ver en lo que se muestra que las personas que han sido entrevistadas miden entre 1.45 a 1.77 y que un 65,6% es mujer, también que el peso de las personas entrevistadas rondan entre 46 a 90 kg y la edad mínima es de 17 y la máxima de 20 o más esto nos puede ayudar a calcular cual es el tipo de comida que podemos recomendar basándonos en esos datos también en el dato de la pregunta sobre si es alérgico a algún alimento o intolerante a alguno, solo hubo dos personas que respondieron que son intolerantes a la lactosa, así que podemos poner un espacio en donde haya alimento sin lactosa como leche, queso y otros. También a las personas que respondieron que son diabéticas, podemos poner un espacio en donde haya alimentos sin azucares y alimentos que ayuden a mantener la glucosa en su lugar. 
 Vemos que el objetivo de la mayoría de las personas es bajar de peso o mantenerlo, así que la aplicación sería más para ayudarlos a bajar de peso y para que ellos lo puedan mantener, bueno también pensando en el peso que ellos deberían tener con la altura y la edad, porque podemos querer bajar de peso, pero si al ver nuestra altura y edad dice que tenemos un buen peso, solo tendríamos que mantenerlo y no bajar para no tener consecuencias en un futuro.
 Así que nuestra aplicación se va a basar en recetas para todas las personas y especiales para diabéticos, intolerantes a la lactosa y tal vez ejercicios que ayuden a mantener el cuerpo, y a bajar de peso.
