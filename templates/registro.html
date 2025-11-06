@@ -2,44 +2,92 @@
 {% block title %}Regístrate{% endblock title %}
 {% block content %}
 <div class="bg-success-subtle flex-grow-1"> 
-    <div class="container my-5">
+
+    <div class="container py-5 mx-auto">
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
+
+            <div class="col-lg-8 col-md-8">
                 <div class="card shadow-lg p-4">
                     <h1 class="card-title text-center mb-4 text-success">Registrate</h1>
                     <h1 class="card-title text-center mb-4 text-success">🥗VitaPlena🥗</h1>
                     <form>
-                        <div class="mb-3 text-success fs-3">
+                        <div class="row mb-3">
+                            <div class="col text-success fs-4">
+                                <img src="static\img/usu.png" class="rounded" alt="..." width="30" height="30">
+                                    Nombre Completo:
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                        </div>
+
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+                        </div>
+                        </div>
+                        <div class="mb-4">
+                        <div class="text-success fs-4">
                             <img src="static\img/correo.png" class="rounded" alt="..." width="30" height="30">
-                            <label for="inputEmail" class="form-label">Ingresa tu Correo Electrónico:</label>
+                            <label for="inputEmail" class="form-label">Correo Electrónico:</label>
                             <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico">
                         </div>
-                        <div class="mb-3 text-success fs-3">
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="text-success fs-4">
                             <img src="static\img/contra.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputPassword" class="form-label">Crea una contraseña segura:</label>
                             <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
                         </div>
-                        <div class="mb-3 text-success fs-3">
-                            <img src="static\img/usu.png" class="rounded" alt="..." width="30" height="30">
-                            <label for="inputNombre" class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
-                        </div>
-                        <div class="mb-3 text-success fs-3">
+                    </div>
+
+                        <div class="row g-3 mb-4">
+                        <div class="col text-success fs-4">
                             <img src="static\img/peso.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputNombre" class="form-label">Peso:</label>
                             <input type="text" class="form-control" id="inputNombre" placeholder="Peso">
                         </div>
-                        <div class="mb-3 text-success fs-3">
+
+                        <div class="col text-success fs-4">
                             <img src="static\img/esta.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputNombre" class="form-label">Estatura:</label>
                             <input type="text" class="form-control" id="inputNombre" placeholder="Estatura">
                         </div>
+                    </div>
+
+                        <div class="mb-3 text-success fs-4">
+                            <img src="static\img/esta.png" class="rounded" alt="..." width="30" height="30">
+                            <label for="inputNombre" class="form-label">Edad:</label>
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Estatura">
+                        </div>
+                        <div class="row g-3">
+    <div class="col text-success fs-4">
+        <label for="select1" class="form-label">Selección 1</label>
+        <select class="form-select" id="select1" aria-label="Primer menú de selección">
+            <option selected>Elige una opción</option>
+            <option value="1">Opción A</option>
+            <option value="2">Opción B</option>
+            <option value="3">Opción C</option>
+        </select>
+    </div>
+    <div class="col text-success fs-4">
+        <label for="select2" class="form-label">Selección 2</label>
+        <select class="form-select" id="select2" aria-label="Segundo menú de selección">
+            <option selected>Elige otra opción</option>
+            <option value="4">Opción X</option>
+            <option value="5">Opción Y</option>
+            <option value="6">Opción Z</option>
+        </select>
+    </div>
+</div>
                         <div class="d-flex flex-column align-items-center gap-2">
                             <img src="static\img/VitaPlena.png" class="rounded w-25" alt="VitaPlena">
-                            <button type="submit" class="btn btn-success btn-lg mt-3">Registrarse</button>
+                            <a href="{{url_for('descubrete')}}" class="btn btn-success btn-lg">¿Quieres comenzar?</a>
                         </div>
                     </form>
-                    <p><a href="inicio.html" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Volver al inicio</a></p>
+                    <p><a href="{{url_for('inicio')}}" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Volver al inicio</a></p>
                 </div>
             </div>
         </div>
