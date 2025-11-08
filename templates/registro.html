@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Regístrate{% endblock title %}
 {% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
 <div class="bg-success-subtle flex-grow-1"> 
 
     <div class="container py-5 mx-auto">
@@ -10,82 +19,129 @@
                 <div class="card shadow-lg p-4">
                     <h1 class="card-title text-center mb-4 text-success">Registrate</h1>
                     <h1 class="card-title text-center mb-4 text-success">🥗VitaPlena🥗</h1>
-                    <form>
+
+                    <form method= "POST" action="{{url_for('registro')}}">
                         <div class="row mb-3">
                             <div class="col text-success fs-4">
-                                <img src="static\img/usu.png" class="rounded" alt="..." width="30" height="30">
+                                <img src="static\img/usu.png" class="rounded" alt="..." width="30" height="30" required>
                                     Nombre Completo:
                             </div>
                         </div>
 
                         <div class="row g-3 mb-4">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" aria-label="First name" required>
                         </div>
 
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" aria-label="Last name" required>
                         </div>
                         </div>
                         <div class="mb-4">
                         <div class="text-success fs-4">
                             <img src="static\img/correo.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputEmail" class="form-label">Correo Electrónico:</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico">
+                            <input type="email" class="form-control" id="email" placeholder="Correo Electronico" required>
                         </div>
                     </div>
 
                     <div class="mb-4">
                         <div class="text-success fs-4">
-                            <img src="static\img/contra.png" class="rounded" alt="..." width="30" height="30">
-                            <label for="inputPassword" class="form-label">Crea una contraseña segura:</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
-                        </div>
+                    <img src="static\img/contra.png" class="rounded" alt="..." width="30" height="30">
+                    <label for="inputPassword5" class="form-label">Crea una contraseña segura:</label>
+                        <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" required>
+                        <div id="password" class="form-text">
                     </div>
-
+                </div>
+            </div>
+            
                         <div class="row g-3 mb-4">
                         <div class="col text-success fs-4">
                             <img src="static\img/peso.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputNombre" class="form-label">Peso:</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Peso">
+                            <input type="text" class="form-control" id="peso" placeholder="Peso" required>
                         </div>
 
                         <div class="col text-success fs-4">
                             <img src="static\img/esta.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputNombre" class="form-label">Estatura:</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Estatura">
+                            <input type="text" class="form-control" id="estatura" placeholder="Estatura" required>
                         </div>
                     </div>
 
-                        <div class="mb-3 text-success fs-4">
-                            <img src="static\img/esta.png" class="rounded" alt="..." width="30" height="30">
+                    <div class="row g-3 mb-4">
+                        <div class="col text-success fs-4">
+                            <img src="static\img/edad.png" class="rounded" alt="..." width="30" height="30">
                             <label for="inputNombre" class="form-label">Edad:</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Estatura">
+                            <input type="text" class="form-control" id="edad" placeholder="Edad" required>
                         </div>
+
+                        <div class="col text-success fs-4">
+                            <img src="static\img/aler.png" class="rounded" alt="..." width="30" height="30">
+                            <label for="inputNombre" class="form-label">Preferencias o restricciones:</label>
+                            <input type="text" class="form-control" id="preferiencia" placeholder="Escribe alergias o lo que prefieras en los alimentos" required>
+                        </div>
+                    </div>
+
                         <div class="row g-3">
     <div class="col text-success fs-4">
-        <label for="select1" class="form-label">Selección 1</label>
-        <select class="form-select" id="select1" aria-label="Primer menú de selección">
-            <option selected>Elige una opción</option>
-            <option value="1">Opción A</option>
-            <option value="2">Opción B</option>
-            <option value="3">Opción C</option>
+        <img src="static\img/gen.png" class="rounded" alt="..." width="30" height="30">
+        <label for="select1" class="form-label">Sexo:</label>
+        <select class="form-select" id="sexo" aria-label="Primer menú de selección" required>
+            <option selected></option>
+            <option value="1">Femenino</option>
+            <option value="2">Masculino</option>
+            <option value="3">Otro</option>
+            <option value="4">Prefiero no decirlo</option>
         </select>
     </div>
+
     <div class="col text-success fs-4">
-        <label for="select2" class="form-label">Selección 2</label>
-        <select class="form-select" id="select2" aria-label="Segundo menú de selección">
-            <option selected>Elige otra opción</option>
-            <option value="4">Opción X</option>
-            <option value="5">Opción Y</option>
-            <option value="6">Opción Z</option>
+        <img src="static\img/ejer.png" class="rounded" alt="..." width="30" height="30">
+        <label for="select2" class="form-label">Nivel de actividad fisica:</label>
+        <select class="form-select" id="fisica" aria-label="Segundo menú de selección" required>
+            <option selected></option>
+            <option value="5">Sedentario(poco o ningun ejercicio)</option>
+            <option value="6">Ligeramente Activo(Ejercicio ligero/deportes 1-3 días/semana)</option>
+            <option value="7">Moderadamente Activo(Ejercicio moderado/deportes 3-5 días/semana)</option>
+            <option value="8">Muy Activo(Ejercicio intenso 6-7 días/semana)</option>
+            <option value="9">Extremadamente Activo(Ejercicio muy intenso, trabajo físico y/o 2 o más entrenamientos al día)</option>
         </select>
     </div>
 </div>
+
+<div class="row g-3">
+    <div class="col text-success fs-4">
+        <img src="static\img/objec.png" class="rounded" alt="..." width="30" height="30">
+        <label for="select1" class="form-label">Objetivos:</label>
+        <select class="form-select" id="objetivo" aria-label="Primer menú de selección" required>
+            <option selected></option>
+            <option value="1">Bajar de peso</option>
+            <option value="2">Aumentar masa muscular</option>
+            <option value="3">Mantener peso</option>
+            <option value="4">Mejorar digestión</option>
+            <option value="5">Controlar una condición (diabetes, hipertensión)</option>
+        </select>
+    </div>
+
+    <div class="col text-success fs-4">
+        <img src="static\img/coc.png" class="rounded" alt="..." width="30" height="30">
+        <label for="select2" class="form-label">Nivel de experiencia en la cocina:</label>
+        <select class="form-select" id="cocina" aria-label="Segundo menú de selección" required>
+            <option selected></option>
+            <option value="6">Experto como todo un chef</option>
+            <option value="7">Apasionado</option>
+            <option value="8">Algo</option>
+            <option value="9">Nada</option>
+        </select>
+    </div>
+</div>
+
                         <div class="d-flex flex-column align-items-center gap-2">
                             <img src="static\img/VitaPlena.png" class="rounded w-25" alt="VitaPlena">
-                            <a href="{{url_for('descubrete')}}" class="btn btn-success btn-lg">¿Quieres comenzar?</a>
+                            <button type="submit" class="btn btn-outline-success btn-lg">Comenzar</button>
                         </div>
+
                     </form>
                     <p><a href="{{url_for('inicio')}}" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Volver al inicio</a></p>
                 </div>
