@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Resultado{% endblock title %}
+{% block content %}
+<div class="text-center mt-5">
+  <h2 class="text-success">Resultado</h2>
+  <p>Tu Índice de Masa Corporal es: <strong>{{ imc }}</strong></p>
+  <p>Clasificación: <strong>{{ clasificacion }}</strong></p>
+  <p>Tu Tasa Metabólica Basal (TMB) es: <strong>{{ tmb }}</strong> kcal/día</p>
+  <p>Tu Gasto Energético Total (GET) es: <strong>{{ get }}</strong> kcal/día</p>
+
+  <form action="/descubrete" method="get">
+    <button type="submit" class="btn btn-secondary btn-lg w-75 mt-4">Calcular de nuevo</button>
+  </form>
+</div>
+{% endblock %}

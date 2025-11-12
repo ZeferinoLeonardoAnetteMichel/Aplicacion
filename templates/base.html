@@ -8,24 +8,56 @@
 </head>
 <body class="d-flex flex-column min-vh-100 bg-success-subtle mx-auto">
 <nav class="navbar navbar-expand-lg bg-success text-white">
-  <div class="container-fluid">
+                            <img src="static\img/VitaPlena.png" class="rounded" alt="..." width="70" height="70" required>
+    <div class="container-fluid">
     <a class="navbar-brand text-white fs-3" href="http://127.0.0.1:5000/">VitaPlena</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+        <div class="navbar-nav">
         <a class="nav-link active text-white fs-3" aria-current="page" href="http://127.0.0.1:5000/registro">Registrate</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/descubrete">Descubrete</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/recetas">Recetas</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/videos">Videos</a>
+        <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/perfil">Perfil</a>
         <a class="nav-link disabled" aria-disabled="true"></a>
-      </div>
+</div>
+<div class="navbar-nav ms-auto d-flex align-items-center">
+        {% if not session.get('logged_in') %}
+                <a href="{{ url_for('login') }}" class="btn btn-outline-success me-2">
+                    Iniciar Sesión
+                </a>
+                <a href="{{ url_for('registro') }}" class="btn btn-success">
+                    Regístrate
+                </a>
+            {% else %}
+            <span class="navbar-text me-3 text-white fs-4">
+                    Hola, {{ session.get('usuario') }}
+                </span>
+                <a href="{{ url_for('close') }}" class="btn btn-danger">
+                    Cerrar Sesión
+                </a>
+                {% endif %}
+                </div>
     </div>
-  </div>
-</nav>
+    </div>
+    </div>
+    </nav>
+<div class="container mt-4">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message | safe }} 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     {% block content %}
-        {% endblock content %}
+    {% endblock content %}
+</div>
         <footer class="bg-success text-white text-center py-3 mt-auto">
         <div class="container">
             <h4 class="mb-0 py-5">¡VIVE LA VIDA SIN RESTRICCIONES Y SÉ FELIZ COMO ERES!</h4>

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Perfil de Usuario{% endblock title %}
+{% block content %}
+{% set usuario = session.get('usuario', 'Invitado') %}
+
+<div class="container py-5">
+    <div class="card shadow-lg p-4">
+        
+        <div class="d-flex align-items-center mb-4 pb-3">
+            <img src="static\img/usuario.png" class="rounded-circle me-4" alt="Usuario" width="100" height="100">
+            <div>
+
+                <h1 class="text-success mb-0 fw-bold">Bienvenido {{ usuario }}</h1>
+                <p class="fs-5 mb-0">Dale un vistazo a tu informacion y que cumplas con lo que te propongas</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h4 class="mb-3 fw-bold">Datos Personales</h4>
+                <form>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold fs-4">Nombre:</label>
+                        <input class="form-control" type="text" value="{{ usuario }}" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold fs-4">Correo Electrónico:</label>
+                        <input class="form-control" type="email" value="" disabled>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold fs-4">Restricciones o Alergias:</label>
+                        <input class="form-control" type="text" value="" placeholder="Alergias o restricciones">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold fs-4">Objetivos:</label>
+                        <select class="form-select" id="objetivo" name="objetivos" aria-label="Primer menú de selección" required>
+            <option selected></option>
+            <option value="1">Bajar de peso</option>
+            <option value="2">Aumentar masa muscular</option>
+            <option value="3">Mantener peso</option>
+            <option value="4">Mejorar digestión</option>
+            <option value="5">Controlar una condición (diabetes, hipertensión)</option>
+        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3 w-100">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="mb-3 fw-bold fs-4">Estadísticas de Salud</h4>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <div class="card text-dark bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">IMC (Índice de Masa Corporal)</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card text-dark bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">TMB (Calorías Basales)</h5>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mt-4">
+                        <h4 class="fs-4 mb-3 fw-bold ">Configuración</h4>
+                        <h4 class="fs-5 mb-3 fw-bold">Poltica de Privacidad</h4>
+                        <h4 class="fs-5 mb-3 fw-bold">Cambiar Contraseña</h4>
+                        <h4 class="fs-5 mb-3 fw-bold">Eliminar cuenta</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
