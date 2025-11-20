@@ -38,7 +38,7 @@ def close():
     return redirect(url_for('inicio'))
 
 
-@app.route('/descubrete', methods=['GET', 'POST'])
+@app.route('/descubrete', methods=['GET','POST'])
 def descubrete():
     if not session.get('logged_in'):
         flash('Inicia sesion para poder acceder', 'warning')
@@ -47,11 +47,12 @@ def descubrete():
     if request.method == 'POST':
         try:
             peso = float(request.form['peso'])
-            estatura = float(request.form['estatura'])
+            estatura_metro = float(request.form['estatura'])
             edad = int(request.form['edad'])
             genero = request.form['genero']
             actividad = float(request.form['actividad'])
-            imc = peso / (estatura ** 2) 
+            imc = peso / (estatura_metro ** 2) 
+            estatura_cm = estatura_metro * 100
             if imc < 18.5:
                 clasificacion = "Bajo peso"
             elif imc < 25:
@@ -61,18 +62,15 @@ def descubrete():
             else:
                 clasificacion = "Obesidad"
             if genero == "masculino":
-                tmb = (10 * peso) + (6.25 * (estatura * 100)) - (5 * edad) + 5
+                tmb = (10 * peso) + (6.25 * (estatura_cm * 100)) - (5 * edad) + 5
             else:
-                tmb = (10 * peso) + (6.25 * (estatura * 100)) - (5 * edad) - 161
+                tmb = (10 * peso) + (6.25 * (estatura_cm * 100)) - (5 * edad) - 161
             get = tmb * actividad
-            return render_template(
-                'resultado.html',
-                imc=round(imc, 2),
-                clasificacion=clasificacion,
-                tmb=round(tmb, 2),
-                get=round(get, 2),
-                usuario=usuario
-            )
+            session['calculo_imc'] = round(imc, 2)
+            session['calculo_clasificacion'] = clasificacion
+            session['calculo_tmb'] = round(tmb, 2)
+            session['calculo_get'] = round(get, 2)
+            return redirect(url_for('resultado'))
         except ValueError:
             flash('Ingresar números válidos para peso, estatura y actividad.', 'danger')
             return redirect(url_for('descubrete'))
@@ -80,9 +78,24 @@ def descubrete():
 
 
 
-@app.route('/resultado', methods=['GET', 'POST'])
+@app.route('/resultado')
 def resultado():
-    return render_template('resultado.html')
+    if 'calculo_imc' not in session:
+        flash('No se encontraron resultados. Por favor, realiza un nuevo cálculo.', 'warning')
+        return redirect(url_for('descubrete'))
+        
+    usuario = session.get('usuario') 
+    imc = session.get('calculo_imc')
+    clasificacion = session.get('calculo_clasificacion')
+    tmb = session.get('calculo_tmb')
+    get = session.get('calculo_get')
+    
+    return render_template('resultado.html',
+        imc=imc,
+        clasificacion=clasificacion,
+        tmb=tmb,
+        get=get,
+        usuario=usuario)
 
 @app.route('/perfil')
 def perfil():
@@ -95,6 +108,10 @@ def recetas():
 @app.route('/videos')
 def videos():
     return render_template('videos.html')
+
+@app.route('/edu')
+def articulo():
+    return render_template('articulos.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
