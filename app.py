@@ -147,7 +147,7 @@ def articulo():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
+#Poner que cuando inicie sesion se vea todo y cuando no este registrado no me muestre la calculadora ni el plan nutrietico, solo el registro y los articulos de ayuda.
 #Hay que poner las alergias y eso debe ser guardada en base de datos, para el lunes en un diccionario de datos,articulos con etiquetas
 #Buscar una o dos dietas de moda y poner mitos y verdades, guia sobre macronutrientes, importancia de la hidratacion y fibra
 #un plan d ejercicio descargable 1 o dos y gratuitos
