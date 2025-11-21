@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
-
 app.secret_key = 'UNA_LLAVE_MUY_LARGA_Y_SECRETA_J_A'
 
 @app.route('/')
@@ -18,17 +17,15 @@ def registro():
         return redirect(url_for('descubrete'))
     return render_template('registro.html')
 
-
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
-        nombre = "Usuario" 
+        nombre = "Usuario"
         session['usuario'] = nombre
         session['logged_in'] = True
         flash(f'¡Hola de nuevo, {nombre}! Sesión iniciada.', 'info')
-        return redirect(url_for('descubrete')) 
+        return redirect(url_for('descubrete'))
     return render_template('login.html')
-
 
 @app.route('/close')
 def close():
@@ -37,13 +34,14 @@ def close():
     flash('Tu sesion ha sido cerrada exitosamente.', 'info')
     return redirect(url_for('inicio'))
 
-
 @app.route('/descubrete', methods=['GET','POST'])
 def descubrete():
     if not session.get('logged_in'):
         flash('Inicia sesion para poder acceder', 'warning')
-        return redirect(url_for('login')) 
-    usuario = session.get('usuario') 
+        return redirect(url_for('login'))
+
+    usuario = session.get('usuario')
+
     if request.method == 'POST':
         try:
             peso = float(request.form['peso'])
@@ -51,8 +49,10 @@ def descubrete():
             edad = int(request.form['edad'])
             genero = request.form['genero']
             actividad = float(request.form['actividad'])
-            imc = peso / (estatura_metro ** 2) 
+
+            imc = peso / (estatura_metro ** 2)
             estatura_cm = estatura_metro * 100
+
             if imc < 18.5:
                 clasificacion = "Bajo peso"
             elif imc < 25:
@@ -61,41 +61,73 @@ def descubrete():
                 clasificacion = "Sobrepeso"
             else:
                 clasificacion = "Obesidad"
+
             if genero == "masculino":
-                tmb = (10 * peso) + (6.25 * (estatura_cm * 100)) - (5 * edad) + 5
+                tmb = (10 * peso) + (6.25 * estatura_cm) - (5 * edad) + 5
             else:
-                tmb = (10 * peso) + (6.25 * (estatura_cm * 100)) - (5 * edad) - 161
+                tmb = (10 * peso) + (6.25 * estatura_cm) - (5 * edad) - 161
+
             get = tmb * actividad
+
             session['calculo_imc'] = round(imc, 2)
             session['calculo_clasificacion'] = clasificacion
             session['calculo_tmb'] = round(tmb, 2)
             session['calculo_get'] = round(get, 2)
+
+            estatura_pulgadas = estatura_metro * 39.37
+
+            if genero == "masculino":
+                pci = 50 + 2.3 * (estatura_pulgadas - 60)
+            else:
+                pci = 45.5 + 2.3 * (estatura_pulgadas - 60)
+
+            session['calculo_pci'] = round(pci, 2)
+
+            proteinas = get * 0.25 / 4
+            carbs = get * 0.50 / 4
+            grasas = get * 0.25 / 9
+
+            session['macro_prot'] = round(proteinas, 1)
+            session['macro_carbs'] = round(carbs, 1)
+            session['macro_grasas'] = round(grasas, 1)
+
             return redirect(url_for('resultado'))
+
         except ValueError:
             flash('Ingresar números válidos para peso, estatura y actividad.', 'danger')
             return redirect(url_for('descubrete'))
+
     return render_template('descubrete.html', usuario=usuario)
-
-
 
 @app.route('/resultado')
 def resultado():
     if 'calculo_imc' not in session:
         flash('No se encontraron resultados. Por favor, realiza un nuevo cálculo.', 'warning')
         return redirect(url_for('descubrete'))
-        
-    usuario = session.get('usuario') 
+
+    usuario = session.get('usuario')
     imc = session.get('calculo_imc')
     clasificacion = session.get('calculo_clasificacion')
     tmb = session.get('calculo_tmb')
     get = session.get('calculo_get')
-    
-    return render_template('resultado.html',
+
+    pci = session.get('calculo_pci')
+    prot = session.get('macro_prot')
+    carbs = session.get('macro_carbs')
+    grasas = session.get('macro_grasas')
+
+    return render_template(
+        'resultado.html',
         imc=imc,
         clasificacion=clasificacion,
         tmb=tmb,
         get=get,
-        usuario=usuario)
+        usuario=usuario,
+        pci=pci,
+        prot=prot,
+        carbs=carbs,
+        grasas=grasas
+    )
 
 @app.route('/perfil')
 def perfil():
