@@ -33,12 +33,9 @@ def registro():
         return redirect(url_for('descubrete'))
     return render_template('registro.html')
 
-
 @app.route('/login', methods=['GET','POST'])
 def login():
     if request.method == 'POST':
-        email =  request.form['email']
-        password = request.form['password']
         nombre = "Usuario"
         session['usuario'] = nombre
         session['logged_in'] = True
