@@ -16,10 +16,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+        <a class="nav-link active text-white fs-3" aria-current="page" href="http://127.0.0.1:5000/login">Inicio Sesion</a>
         <a class="nav-link active text-white fs-3" aria-current="page" href="http://127.0.0.1:5000/registro">Registrate</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/descubrete">Descubrete</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/recetas">Recetas</a>
-        <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/videos">Videos</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/edu"> Artículos</a>
         <a class="nav-link text-white fs-3" href="http://127.0.0.1:5000/perfil">Perfil</a>
         <a class="nav-link disabled" aria-disabled="true"></a>
@@ -28,14 +28,18 @@
         {% if not session.get('logged_in') %}
                 <a href="{{ url_for('login') }}" class="btn btn-outline-success me-2">
                     Iniciar Sesión
-                </a>
+                </a> 
+
                 <a href="{{ url_for('registro') }}" class="btn btn-success">
                     Regístrate
                 </a>
+
             {% else %}
+
             <span class="navbar-text me-3 text-white fs-4">
-                    Hola, {{ session.get('usuario') }}
+                    🖐️¡Hola, {{ session.get('usuario') }}!🖐️
                 </span>
+                
                 <a href="{{ url_for('close') }}" class="btn btn-danger">
                     Cerrar Sesión
                 </a>

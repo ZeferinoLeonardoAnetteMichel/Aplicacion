@@ -15,10 +15,24 @@
   <p>Clasificación: <strong>{{ clasificacion }}</strong></p>
   <p>Tu Tasa Metabólica Basal (TMB) es: <strong>{{ tmb }}</strong> kcal/día</p>
   <p>Tu Gasto Energético Total (GET) es: <strong>{{ get }}</strong> kcal/día</p>
+  <p>Tu Gasto Energético Total (GET) es: <strong>{{ get }}</strong> kcal/día</p>
+
+<p>Peso Corporal Ideal: <strong>{{ pci }} kg</strong></p>
+
+<h4 class="mt-4 text-success">Macronutrientes recomendados</h4>
+<p>Proteínas: <strong>{{ prot }} g/día</strong></p>
+<p>Carbohidratos: <strong>{{ carbs }} g/día</strong></p>
+<p>Grasas: <strong>{{ grasas }} g/día</strong></p>
 </div>
   <form action="/descubrete" method="get">
     <button type="submit" class="btn btn-secondary btn-lg w-75 mt-4">Calcular de nuevo</button>
   </form>
+  </div>
+            </div>
+            </div>
+    </div>
+</div>
+{% endblock %}
   </div>
             </div>
             </div>

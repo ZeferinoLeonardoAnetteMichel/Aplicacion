@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Etiqueta{% endblock title %}
+{% block content %}
+<div class="card">
+        <h5 class="card-header text-center bg-success text-white fs-3">🧠¡No solo es nutricion, aprende un poco mas!🧠</h5>
+
+        <div class="card-body">
+        <h5 class="card-title text-center fs-3">• ¿Cómo leer las etiquetas nutricionales?🤔</h5>
+
+        <p class="card-text text-center fst-italic fs-3">Como primera cosa, cada etiqueta cambia el contenido segun el alimento o bebida que se vaya a consumir, asi que los ejemplos que se van a mostrar son una muestra de lo que podemos ver en las etiquetas.</p>
+        
+        <h5 class="card-title fw-bold text-center fs-3">ETIQUETA DE MUESTRA LASAÑA CONGELADA</h5>
+
+        <img src="static\img/etiqueta.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+
+        <h5 class="card-title text-info fs-3">1. Información sobre la porción</h5>
+        <img src="static\img/uno.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+        <p class="card-text text-center fst-italic fs-3">Primero estan las porciones, se pueden ver como tazas o piezas estas llevan una (g) que representa a los gramos, por ejemplo en la imagen dice que 1 taza (cup) equivale a 227 g entonces si agarramos dos tazas estariamos comiendo el doble de calorias y nutrientes que aparecen en la etiqueta de muestra, por lo que tendría que duplicar las cantidades de nutrientes y calorías, así como los %VD, para ver lo que está ingiriendo en dos porciones.</p>
+        <img src="static\img/uno1.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+        <p class="card-text text-center fst-italic fs-3">Como podemos ver en la tabla, cada que aumentas las porciones tambien van subiendo las calorias.</p>
+
+        <h5 class="card-title text-danger fs-3">2. Calorías</h5>
+        <img src="static\img/dos.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+        <p class="card-text text-center fst-italic fs-3">Las calorías proporcionan una medida de cuánta energía se obtiene de una porción de este alimento. En el ejemplo, hay 280 calorías en una porción de lasaña. ¿Qué pasaría si se comiera todo el paquete? Entonces, consumirías 4 porciones o 1,120 calorías.Para conseguir o mantener un peso corporal saludable, equilibre el número de calorías que come y bebe con el número de calorías que utiliza su cuerpo.Sus necesidades calóricas pueden ser mayores o menores y variar en función de su edad, sexo, altura, peso y nivel de actividad física. </p>
+
+        <h5 class="card-title text-warning fs-3">3. Nutrientes</h5>
+        <img src="static\img/tres.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+        <p class="card-text text-center fst-italic fs-3">Muestra algunos nutrientes principales que influyen en su salud. Puede utilizar la etiqueta como una herramienta de ayuda para sus necesidades alimentarias personales: busque alimentos que contengan más nutrientes de los que desee obtener más y menos nutrientes de los que desee limitar.Las grasas saturadas, el sodio y las azúcares añadidas son nutrientes enumerados en la etiqueta que pueden estar asociados a efectos adversos para la salud, y las personas en los Estados Unidos suelen consumir demasiados de estos nutrientes. Se identifican como nutrientes que hay que consumir en menor cantidad.Nota: la palabra "incluye" antes de azúcares añadidas en la etiqueta indica que las azúcares añadidas están incluidas en el número de gramos de azúcares totales del producto.
+Por ejemplo, en un envase de yogur con edulcorantes añadidas, podría aparecer:
+        <img src="static\img/yogurt.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+
+</p>
+
+        <h5 class="card-title text-danger-emphasis fs-3">4. El porcentaje de valor diario (%VD)</h5>
+        <img src="static\img/cuatro.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
+        <p class="card-text text-center fst-italic fs-3">El % de valor diario (%VD o DV en inglés) es el porcentaje del valor diario de cada nutriente en una porción del alimento. Los valores diarios son cantidades de referencia (expresadas en gramos, miligramos o microgramos) de nutrientes que se deben consumir o no superar cada día.El %VD muestra cuánto contribuye un nutriente de una porción de un alimento a la dieta diaria total.
+El %VD le ayuda a determinar si una porción de alimento es alta o baja en un nutriente.</p>
+<p class="fw-bold fs-4">Guía general sobre el porcentaje de valor diario %VD
+5 % VD o menos de un nutriente por porción se considera bajo
+20 % VD o más de un nutriente por porción se considera alto</p>
+        <p class="card-text text-center fst-italic fs-3">Hay variantes de etiquetas como las de columna doble y las de un solo ingrediente de azucar,como el de la miel</p>
+<p><a href="https://www.fda.gov/food/nutrition-facts-label/como-entender-y-utilizar-la-etiqueta-de-informacion-nutricional" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4">Pagina de apoyo</a></p>
+<a href="http://127.0.0.1:5000/edu" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4">VOLVER</a>
+</div>
+</div>
+{% endblock content %}
