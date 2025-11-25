@@ -19,22 +19,6 @@ app.config['MYSQL_DB']='holaadios'
 
 mysql=MYSQL(app)
 
-def crear_tabla():
-    
-    try:
-    
-            cursor=MySQL.connection.cursor()
-
-            cursor.execute('''CREATE_TABLE_NOT_EXTSTS_usuario(
-id INT AUTO_INCREMENT PRIMARY KEY,
-nombre VARCHAR(50) NOT NULL,
-email VARCHAR(50) UNIQUE NOT NULL,
-password VARCHAR(225) NOT NULL,
-teléfono VARCHAR(20),
-fecha_registro TIMESTAMP DEFAULT CURRENT_
-)
-''')
-
 @app.route('/')
 def inicio():
     return render_template('inicio.html')
