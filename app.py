@@ -114,7 +114,7 @@ def login():
         if check_password_hash(stored_password_hash, password):
             session["usuario_id"] = usuario[0]
             session["usuario_nombre"] = usuario[1]
-            session["usuario_email"] = usuario[2]   # ← AQUÍ LO AGREGAS
+            session["usuario_email"] = usuario[2]  
             flash(f"¡Bienvenido, {usuario[1]}!", "success")
             return redirect(url_for("inicio"))
         else:
