@@ -1,48 +1,58 @@
 {% extends "base.html" %}
 {% block title %}Iniciar{% endblock title %}
 {% block content %}
-        <div class="row justify-content-center">
-            <div class="col-mb-6 col-lg-6">
-                <div class="card p-4">
-                    <div class="row col-mb-2 mx-auto">
-                        <div class="card-body">
-                            <div class="mb-6">
-                                <h1 class="text-center text-success">Inicia sesion</h1>
-                                <p class="text-center fs-4">¡Hola bienvenido de nuevo!🙌</p>
-                            </div>
-                        </div>
-                    </div>
-                    <section class="row col-mb-2 mx-auto">
-                        <form method="POST" action="{{url_for('login')}}">
-                            <div class="row mb-3">
-                                <div class="col-6">
-                                    <input type="text" class="form-control" id="Nombre" placeholder="Nombre">
-                                </div>
-                                <div class="col-6">
-                                    <input type="text" class="form-control" id="Apellido" placeholder="Apellido">
-                                </div>
-                            </div>
-                
-                                <div class="row justify-content-center">
-                                    <div class="col- mb-3 mx-auto">
-                                        <input type="email" class="form-control" id="disabledTextInput"
-                                            placeholder="Correo electrónico">
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="mb-3 mx-auto">
-                                        <input type="password" class="form-control" id="disabledTextInput"
-                                            placeholder="Contraseña">
-                                    </div>
-                                </div>
-                                <div class="d-grid gap-2 col-6 mx-auto mb-4">
-                                    <button type="submit" class="btn btn-success btn-lg">Inicia</button>
-                                    <h5 class="text-center text-primary">¿Olvidaste tu contraseña?</h5>
-                                    <p><a class="link-opacity-75-hover fs-4" href="http://127.0.0.1:5000/registro">¿Aun no tienes una cuenta?Registrate</a></p>
-                                </div>
-                            </div>
+
+<div class="row justify-content-center">
+    <div class="col-mb-6 col-lg-6">
+        <div class="card p-4">
+
+            <div class="card-body">
+                <div class="mb-6 text-center">
+                    <h1 class="text-success">Inicia sesión</h1>
+                    <p class="fs-4">¡Hola, bienvenido de nuevo! 🙌</p>
                 </div>
             </div>
-        </main>
-        </form>
-        {% endblock content %}
+
+            <section class="row col-mb-2 mx-auto">
+                <form method="POST" action="{{ url_for('login') }}">
+
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" name="apellido" placeholder="Apellido" required>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mb-3">
+                        <div class="col">
+                            <input type="email" name="correo" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mb-3">
+                        <div class="col">
+                            <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                        <button type="submit" class="btn btn-success btn-lg">Inicia</button>
+
+                        <h5 class="text-center text-primary">¿Olvidaste tu contraseña?</h5>
+
+                        <p class="text-center">
+                            <a class="link-opacity-75-hover fs-4" href="{{ url_for('registro') }}">
+                                ¿Aún no tienes una cuenta? Regístrate
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -10,7 +10,7 @@
             <img src="static\img/usuario.png" class="rounded-circle me-4" alt="Usuario" width="100" height="100">
             <div>
 
-                <h1 class="text-success mb-0 fw-bold">Bienvenido {{ usuario }}</h1>
+                <h1 class="text-success mb-0 fw-bold">Bienvenido {{ usuario_nombre }}</h1>
                 <p class="fs-5 mb-0">Dale un vistazo a tu informacion y que cumplas con lo que te propongas</p>
             </div>
         </div>
@@ -22,12 +22,12 @@
 
                     <div class="mb-3">
                         <label class="form-label fw-bold fs-4">Nombre:</label>
-                        <input class="form-control" type="text" value="{{ usuario }}" disabled>
+                        <input class="form-control" type="text" value="{{ usuario_nombre}}" disabled>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label fw-bold fs-4">Correo Electrónico:</label>
-                        <input class="form-control" type="email" value="" disabled>
+                        <input class="form-control" type="email" value="{{usuario_email}}" disabled>
                     </div>
                     
                     <div class="mb-3">

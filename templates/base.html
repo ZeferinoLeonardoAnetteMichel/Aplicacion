@@ -25,7 +25,7 @@
         <a class="nav-link disabled" aria-disabled="true"></a>
 </div>
 <div class="navbar-nav ms-auto d-flex align-items-center">
-        {% if not session.get('logged_in') %}
+            {% if not session.get('usuario_nombre') %}
                 <a href="{{ url_for('login') }}" class="btn btn-outline-success me-2">
                     Iniciar Sesión
                 </a> 
@@ -37,7 +37,7 @@
             {% else %}
 
             <span class="navbar-text me-3 text-white fs-4">
-                    🖐️¡Hola, {{ session.get('usuario') }}!🖐️
+                    🖐️¡Hola, {{ session.get('usuario_nombre') }}!🖐️
                 </span>
                 
                 <a href="{{ url_for('close') }}" class="btn btn-danger">
