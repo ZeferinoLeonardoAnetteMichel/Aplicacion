@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}PCI{% endblock title %}
+{% block content %}
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0">
+                    
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 class="mb-0">Calculadora (PCI)</h4>
+                        <h4 class="mb-0">Ingesta Calórica Personalizada</h4>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="gct" class="form-label fw-bold">Tu Gasto Calórico Total (GCT) en Kcal:</label>
+                                <input type="number" class="form-control" id="gct" placeholder="Ej: 2500" step="1" required>
+                                <div class="form-text">Ingresa el valor de GCT que calculaste anteriormente (TMB x Factor de Actividad).</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">Selecciona tu Objetivo Calórico:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="objetivo" id="mantener" value="0" checked>
+                                    <label class="form-check-label" for="mantener">
+                                        Mantener Peso(Consumir tu GCT)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="objetivo" id="perder" value="-500">
+                                    <label class="form-check-label" for="perder">
+                                        Perder Peso(Déficit de ~500 Kcal)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="objetivo" id="ganar" value="500">
+                                    <label class="form-check-label" for="ganar">
+                                        Ganar Peso(Superávit de ~500 Kcal)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success btn-lg text-white" onclick="calcularPCI()">
+                                    Calcular PCI
+                                </button>
+                            </div>
+                            </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0">
+
+                            <div class="text-center">
+                                <p class="lead fw-bold mb-1">Tu Ingesta Calórica Personalizada (PCI) es:</p>
+                                <div id="resultado-pci" class="display-3 text-info mb-2 fw-bolder">--</div>
+                                <p class="alert alert-light border fw-bold" id="informacion-pci" role="alert">
+                                    Calorías netas que debes consumir al día.
+                                </p>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function calcularPCI() {
+            const gct = parseFloat(document.getElementById('gct').value);
+            const ajuste = parseInt(document.querySelector('input[name="objetivo"]:checked').value);
+            const objetivoTexto = document.querySelector('input[name="objetivo"]:checked').labels[0].textContent.trim();
+
+            const resultadoPciDiv = document.getElementById('resultado-pci');
+            const infoPciDiv = document.getElementById('informacion-pci');
+
+            // Validación de datos
+            if (isNaN(gct) || gct <= 0) {
+                resultadoPciDiv.textContent = 'Error';
+                infoPciDiv.textContent = 'Datos inválidos. Asegúrate de ingresar tu GCT.';
+                infoPciDiv.className = 'alert alert-danger fw-bold';
+                return;
+            }
+
+            // Cálculo del PCI: GCT + Ajuste
+            const pci = gct + ajuste;
+            const pciRedondeado = Math.round(pci);
+
+            resultadoPciDiv.textContent = pciRedondeado + ' Kcal';
+            
+            let claseAlerta = 'alert fw-bold';
+            let mensaje = '';
+
+            if (ajuste === 0) {
+                claseAlerta += ' alert-primary';
+                mensaje = `Para **${objetivoTexto.replace('⚖️', '').trim()}**, consume aproximadamente ${pciRedondeado} Kcal.`;
+            } else if (ajuste < 0) {
+                claseAlerta += ' alert-success';
+                mensaje = `Para una **Pérdida de Peso** sostenible (déficit), consume aproximadamente ${pciRedondeado} Kcal.`;
+            } else {
+                claseAlerta += ' alert-warning';
+                mensaje = `Para **Ganar Peso/Músculo** (superávit), consume aproximadamente ${pciRedondeado} Kcal.`;
+            }
+            
+            infoPciDiv.innerHTML = mensaje; // Usar innerHTML para el bold
+            infoPciDiv.className = claseAlerta;
+        }
+    </script>
+        {% endblock content %}

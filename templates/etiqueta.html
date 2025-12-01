@@ -1,72 +1,130 @@
 {% extends "base.html" %}
 {% block title %}Etiqueta{% endblock title %}
 {% block content %}
-<div class="card">
-        <h5 class="card-header text-center bg-success text-white fs-3">
-        🧠¡No solo es nutricion, aprende un poco mas!🧠</h5>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-9">
 
-        <div class="card-body">
-        <h5 class="card-title text-center mb-4 fs-3">• ¿Cómo leer las etiquetas nutricionales?🤔</h5>
+            <div class="card shadow-lg border-0 rounded-4">
+                
+                <div class="card-header text-center bg-success text-white py-3 ">
+                    <h1 class="fs-3 fw-bold mb-0">
+                        🧠 ¡No solo es nutrición, aprende un poco más! 🧠
+                    </h1>
+                </div>
 
-        <p class="card-text text-center fst-italic fs-5">Como primera cosa, cada etiqueta cambia el contenido segun el alimento o bebida que se vaya a consumir, asi que los ejemplos que se van a mostrar son una muestra de lo que podemos ver en las etiquetas.</p>
-        
-        <h5 class="card-title fw-bold text-center mt-4 fs-5">ETIQUETA DE MUESTRA LASAÑA CONGELADA</h5>
+                <div class="card-body p-5">
+                    
+                    <h2 class="card-title text-center mb-5 display-6 fw-bold text-dark border-bottom border-success pb-2">
+                        • ¿Cómo leer las etiquetas nutricionales? 🤔
+                    </h2>
 
-        <img src="static\img/etiqueta.png" class="img-fluid d-block mx-auto mt-4 mb-5" alt="">
+                    <p class="card-text text-center fst-italic fs-5 text-muted mb-5">
+                        Como primera cosa, cada etiqueta cambia el contenido según el alimento o bebida que se vaya a consumir. Los ejemplos que se muestran son una muestra general de lo que podemos encontrar.
+                    </p>
+                    
+                    <div class="bg-light p-4 rounded-3 shadow-sm mb-5">
+                        <h3 class="card-title fw-bolder text-center fs-4 text-dark mb-4">
+                            ETIQUETA DE MUESTRA: LASAÑA CONGELADA
+                        </h3>
+                        <img src="static\img/etiqueta.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 400px;">
+                    </div>
+                    
+                    <div class="mb-5 border-start border-4 border-info ps-3">
+                        <h4 class="card-title text-info fw-bold fs-3 mb-3">1. Información sobre la porción</h4>
+                        
+                        <img src="static\img/uno.png" class="img-fluid d-block mx-auto mt-4 mb-4 rounded shadow-sm" alt="Detalle de porciones en la etiqueta">
+                        
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            Primero están las porciones. Se pueden ver como tazas o piezas y llevan una **(g)** que representa los gramos. Por ejemplo, en la imagen dice que 1 taza (cup) equivale a 227 g. Si se consumen dos tazas, se estaría ingiriendo el doble de calorías y nutrientes que aparecen en la etiqueta. Por lo tanto, tendría que duplicar las cantidades de nutrientes y calorías, así como los %VD.
+                        </p>
+                        
+                        <div class="alert alert-secondary text-center fst-italic fs-6 mt-4 p-3 shadow-sm">
+                            <img src="static\img/uno1.png" class="img-fluid d-block mx-auto mb-3" alt="Tabla de ejemplo que muestra el aumento de calorías al aumentar las porciones">
+                            <p class="mb-0">Como podemos ver en la tabla, cada que aumentan las porciones también suben las calorías.</p>
+                        </div>
+                    </div>
 
-        <h5 class="card-title text-info fs-4">1. Información sobre la porción</h5>
-        <img src="static\img/uno.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
-        <p class="card-text fst-italic fs-5">Primero estan las porciones, se pueden ver como tazas o 
-        piezas estas llevan una (g) que representa a los gramos, por ejemplo en la imagen dice que 1 taza
-        (cup) equivale a 227 g entonces si agarramos dos tazas estariamos comiendo el doble de calorias y
-        nutrientes que aparecen en la etiqueta de muestra, por lo que tendría que duplicar las cantidades 
-        de nutrientes y calorías, así como los %VD, para ver lo que está ingiriendo en dos porciones.</p>
-        <img src="static\img/uno1.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
-        <p class="card-text text-center fst-italic fs-5">Como podemos ver en la tabla, cada que aumentas 
-        las porciones tambien van subiendo las calorias.</p>
+                    <hr class="my-5 border-warning opacity-75">
 
-        <h5 class="card-title text-danger fs-4">2. Calorías</h5>
-        <img src="static\img/dos.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
-        <p class="card-text text-center fst-italic fs-5">Las calorías proporcionan una medida de cuánta
-        energía se obtiene de una porción de este alimento. En el ejemplo, hay 280 calorías en una porción
-        de lasaña. ¿Qué pasaría si se comiera todo el paquete? Entonces, consumirías 4 porciones o 1,120 
-        calorías.Para conseguir o mantener un peso corporal saludable, equilibre el número de calorías 
-        que come y bebe con el número de calorías que utiliza su cuerpo.Sus necesidades calóricas pueden 
-        ser mayores o menores y variar en función de su edad, sexo, altura, peso y nivel de actividad 
-        física. </p>
+                    <div class="mb-5 border-start border-4 border-danger ps-3">
+                        <h4 class="card-title text-danger fw-bold fs-3 mb-3">2. Calorías</h4>
+                        
+                        <img src="static\img/dos.png" class="img-fluid d-block mx-auto mt-4 mb-4 rounded shadow-sm" alt="Detalle de las calorías en la etiqueta">
+                        
+                        <p class="card-text text-start fst-italic fs-5 text-dark">
+                            Las calorías proporcionan una medida de cuánta energía se obtiene de una porción de este alimento. En el ejemplo, hay 280 calorías en una porción de lasaña. ¿Qué pasaría si se comiera todo el paquete? Entonces, consumirías 4 porciones o 1,120 calorías. Para conseguir o mantener un peso corporal saludable, equilibre el número de calorías que come y bebe con el número de calorías que utiliza su cuerpo. Sus necesidades calóricas pueden ser mayores o menores y variar en función de su edad, sexo, altura, peso y nivel de actividad física.
+                        </p>
+                    </div>
+                    
+                    <hr class="my-5 border-warning opacity-75">
 
-        <h5 class="card-title text-warning fs-4">3. Nutrientes</h5>
-        <img src="static\img/tres.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
-        <p class="card-text text-center fst-italic fs-5">Muestra algunos nutrientes principales que influyen en su salud. Puede utilizar la etiqueta como una herramienta de ayuda para sus necesidades alimentarias personales: busque alimentos que contengan más nutrientes de los que desee obtener más y menos nutrientes de los que desee limitar.Las grasas saturadas, el sodio y las azúcares añadidas son nutrientes enumerados en la etiqueta que pueden estar asociados a efectos adversos para la salud, y las personas en los Estados Unidos suelen consumir demasiados de estos nutrientes. Se identifican como nutrientes que hay que consumir en menor cantidad.Nota: la palabra "incluye" antes de azúcares añadidas en la etiqueta indica que las azúcares añadidas están incluidas en el número de gramos de azúcares totales del producto.
-Por ejemplo, en un envase de yogur con edulcorantes añadidas, podría aparecer:
-        <img src="static\img/yogurt.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt=""></p>
+                    <div class="mb-5 border-start border-4 border-warning ps-3">
+                        <h4 class="card-title text-warning fw-bold fs-3 mb-3">3. Nutrientes</h4>
+                        
+                        <img src="static\img/tres.png" class="img-fluid d-block mx-auto mt-4 mb-4 rounded shadow-sm" alt="Detalle de los nutrientes en la etiqueta">
+                        
+                        <p class="card-text text-start fst-italic fs-5 text-dark">
+                            Muestra algunos nutrientes principales que influyen en su salud. Busque alimentos que contengan más nutrientes de los que desee obtener más (como Fibra Dietética, Potasio) y menos nutrientes de los que desee limitar.
+                        </p>
+                        
+                        <div class="alert alert-danger p-3 mt-4 mb-4">
+                            <p class="mb-1 fw-bold">¡Atención!</p>
+                            <p class="small mb-0">Las Grasas Saturadas, el Sodio y las Azúcares Añadidas son nutrientes que se recomienda consumir en menor cantidad.</p>
+                        </div>
+                        
+                        <p class="card-text text-start fst-italic fs-5 text-dark mb-4">
+                            Nota: la palabra "incluye" antes de azúcares añadidas en la etiqueta indica que las azúcares añadidas están incluidas en el número de gramos de azúcares totales del producto. Por ejemplo, en un envase de yogur con edulcorantes añadidas:
+                        </p>
+                        
+                        <img src="static\img/yogurt.png" class="img-fluid d-block mx-auto rounded shadow-sm" alt="Etiqueta de muestra de yogur mostrando azúcares añadidos" style="max-width: 300px;">
+                    </div>
+                    
+                    <hr class="my-5 border-warning opacity-75">
 
-        <h5 class="card-title text-danger-emphasis fs-4">4. El porcentaje de valor diario (%VD)</h5>
-        <img src="static\img/cuatro.png" class="img-fluid d-block mx-auto mt-4 mb-4" alt="">
-        <p class="card-text text-center fst-italic fs-5">El % de valor diario (%VD o DV en inglés) es el 
-        porcentaje del valor diario de cada nutriente en una porción del alimento. Los valores diarios 
-        son cantidades de referencia (expresadas en gramos, miligramos o microgramos) de nutrientes que 
-        se deben consumir o no superar cada día.El %VD muestra cuánto contribuye un nutriente de una 
-        porción de un alimento a la dieta diaria total.El %VD le ayuda a determinar si una porción de 
-        alimento es alta o baja en un nutriente.</p>
-        <p class="fw-bold fs-4">Guía general sobre el porcentaje de **valor diario %VD**:</p>
-        <p class="fs-5 mb-1"><span class="fw-bold">5 % VD o menos</span> por porción se considera **BAJO** (aplica a nutrientes a limitar).</p>
-        <p class="fs-5 mb-0"><span class="fw-bold">20 % VD o más</span> por porción se considera **ALTO** (aplica a nutrientes deseados).</p>
-       <hr class="my-5">
-        
-        <h4 class="card-title fw-bold text-center fs-5">
-            Otras Variantes de Etiquetas
-        </h4>
-        <p class="card-text text-center fst-italic fs-5">
-            Existen variantes de etiquetas como las de columna doble y las de un solo ingrediente de azúcar, como el de la miel.
-        </p>
-        <div class="text-center mt-5">
-            <p><a href="https://www.fda.gov/food/nutrition-facts-label/como-entender-y-utilizar-la-etiqueta-de-informacion-nutricional" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4" target="_blank">
-                Pagina de Apoyo (FDA)
-            </a></p>
-            <a href="http://127.0.0.1:5000/edu" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4">
-                VOLVER
-            </a>
+                    <div class="mb-5 border-start border-4 border-primary ps-3">
+                        <h4 class="card-title text-primary fw-bold fs-3 mb-3">4. El porcentaje de valor diario (%VD)</h4>
+                        
+                        <img src="static\img/cuatro.png" class="img-fluid d-block mx-auto mt-4 mb-4 rounded shadow-sm" alt="Detalle del porcentaje de valor diario en la etiqueta">
+                        
+                        <p class="card-text text-start fst-italic fs-5 text-dark">
+                            El % de valor diario (%VD o DV en inglés) es el porcentaje del valor diario de cada nutriente en una porción del alimento. Los valores diarios son cantidades de referencia de nutrientes que se deben consumir o no superar cada día. El %VD le ayuda a determinar si una porción de alimento es alta o baja en un nutriente.
+                        </p>
+                        
+                        <div class="mt-4 bg-light p-4 border rounded-3 shadow-sm">
+                            <p class="fw-bold fs-4 text-center text-dark">Guía general sobre el porcentaje de <span class="text-success">Valor Diario %VD</span>:</p>
+                            
+                            <p class="fs-5 mb-1 ps-3 border-start border-danger border-3">
+                                <span class="fw-bolder text-danger">5 % VD o menos</span> por porción se considera BAJO (aplica a nutrientes a limitar, como Sodio).
+                            </p>
+                            <p class="fs-5 mb-0 ps-3 border-start border-success border-3">
+                                <span class="fw-bolder text-success">20 % VD o más</span> por porción se considera ALTO (aplica a nutrientes deseados, como Fibra).
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-5 border-success opacity-75">
+                    
+                    <div class="text-center bg-info bg-opacity-10 p-4 rounded-3">
+                        <h4 class="card-title fw-bold fs-4 text-dark mb-4">
+                            Otras Variantes de Etiquetas y Recursos
+                        </h4>
+                        <p class="card-text fst-italic fs-5 text-muted mb-5">
+                            Existen variantes de etiquetas como las de columna doble y las de un solo ingrediente de azúcar, como el de la miel. ¡Sigue explorando!
+                        </p>
+                        
+                        <p>
+                            <a href="https://www.fda.gov/food/nutrition-facts-label/como-entender-y-utilizar-la-etiqueta-de-informacion-nutricional" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold fs-5" target="_blank">
+                                🔗 Página de Apoyo (FDA - Fuente Oficial)
+                            </a>
+                        </p>
+                        <a href="http://127.0.0.1:5000/edu" class="btn btn-outline-success btn-lg mt-3 fw-bold">
+                            VOLVER A EDUCACIÓN
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

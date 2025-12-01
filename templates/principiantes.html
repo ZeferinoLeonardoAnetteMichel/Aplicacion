@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+{% block title %}Principiantes{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-success">🥣 Recetas para principiantes 🥣 </h1>
+        <p class="lead text-muted">Platillos con pocos ingredientes y pasos sencillos, ideales para ti que quieres entrar al mundo de la cocina.</p>
+    </div>
+    <div class="accordion" id="accordionExample">
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingOne">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    1. Pechuga de Pollo a la Plancha con Limón (Proteína)🍗
+                </button>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>2 Pechugas de Pollo.</li>
+                                <li>Aceite de Oliva, Sal, Pimienta.</li>
+                                <li>Jugo de 1/2 Limón.</li>
+                            </ul>   
+                            <img src="static\img/polimon.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Sazona el pollo con sal y pimienta.</li>
+                                <li>Calienta una sartén con un poco de aceite de oliva a fuego medio-alto.</li>
+                                <li>Cocina el pollo 5-7 minutos por cada lado. Rocía con el jugo de limón antes de servir.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingTwo">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Pasta Básica con Mantequilla y Queso (Carbohidrato)
+                </button>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>250g de Pasta corta.</li>
+                                <li>2 Litros de Agua y Sal.</li>
+                                <li>2 Cdas. de Mantequilla.</li>
+                                <li>Queso rallado.</li>
+                            </ul>
+                    <img src="static\img/pasta.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Hierve el agua con sal. Agrega la pasta y cocina según las instrucciones.</li>
+                                <li>Cuela la pasta.</li>
+                                <li>Regresa la pasta a la olla, añade mantequilla y sirve con queso rallado.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingThree">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Revuelto de Huevo y Jamón (Desayuno/Cena Rápida)
+                </button>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>3 Huevos.</li>
+                                <li>3 rebanadas de Jamón picado.</li>
+                                <li>Aceite o Mantequilla.</li>
+                                </ul>
+                            <img src="static\img/jamon.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Bate los huevos con sal y pimienta.</li>
+                                <li>Calienta la sartén y saltea el jamón picado por 2 minutos.</li>
+                                <li>Vierte los huevos batidos y revuelve hasta que cuajen.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingFour">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Sopa de Tomate en Lata (Comida de Confort)
+                </button>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 Lata de Sopa de Tomate Concentrada.</li>
+                                <li>Leche o Agua (cantidad indicada en la lata).</li>
+                                <li>Una pizca de Orégano (opcional).</li>
+                            </ul>
+                        <img src="static\img/sopa.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Vacía el contenido de la lata en una olla.</li>
+                                <li>Agrega la leche o agua.</li>
+                                <li>Calienta a fuego medio, revolviendo, hasta que esté caliente.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingFive">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Tostada con Aguacate y Huevo (Snack Gourmet Sencillo)
+                </button>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>2 rebanadas de Pan integral.</li>
+                                <li>1 Aguacate (palta).</li>
+                                <li>2 Huevos (pochados o fritos).</li>
+                                <li>Sal, Pimienta.</li>
+                            </ul>
+                        <img src="static\img/tostada.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Tuesta el pan. Haz el huevo pochado o frito.</li>
+                                <li>Aplasta el aguacate y úntalo en el pan.</li>
+                                <li>Coloca el huevo encima y sazona.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingSix">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Salteado Rápido de Atún y Maíz (Proteína Fácil)
+                </button>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 Lata de Atún en aceite o agua (escurrido).</li>
+                                <li>1 Lata de Maíz dulce (escurrido).</li>
+                                <li>Mantequilla o Aceite.</li>
+                                <li>Sal y Pimienta.</li>
+                            </ul>
+                            <img src="static\img/atun.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Calienta la sartén con mantequilla.</li>
+                                <li>Agrega el maíz y el atún, saltea por 5 minutos.</li>
+                                <li>Sazona y sirve caliente. Ideal con arroz blanco.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingSeven">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    7. Quesadillas de Tortilla de Harina (Snack/Cena)
+                </button>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>2 Tortillas de Harina o Maíz.</li>
+                                <li>Queso Oaxaca o Mozzarella (el que se derrita).</li>
+                                <li>Mantequilla o Aceite en spray.</li>
+                            </ul>
+                        <img src="static\img/quesa.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Calienta la sartén a fuego medio con un poco de grasa.</li>
+                                <li>Pon una tortilla, rellena la mitad con queso y dobla.</li>
+                                <li>Cocina 2 minutos por cada lado hasta que el queso se derrita y la tortilla esté dorada.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingEight">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                    8. Crema de Champiñones de Lata (Guarnición)
+                </button>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 Lata de Crema de Champiñones Concentrada.</li>
+                                <li>Leche o Agua (la cantidad indicada en la lata).</li>
+                            </ul>
+                        <img src="static\img/champiñon.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Vacía el contenido de la lata en una olla pequeña.</li>
+                                <li>Agrega la leche o agua y mezcla bien.</li>
+                                <li>Calienta a fuego medio, revolviendo, hasta que hierva suavemente.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingNine">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                    9. Frijoles Refritos con Queso (Guarnición Mexicana)
+                </button>
+            </div>
+            <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 Lata de Frijoles Refritos.</li>
+                                <li>2 Cdas. de Aceite o Manteca.</li>
+                                <li>Queso rallado (Cotija o fresco).</li>
+                                <li>Chips de tortilla (para servir).</li>
+                            </ul>
+                        <img src="static\img/frijole.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Calienta el aceite/manteca en una olla pequeña.</li>
+                                <li>Agrega los frijoles de lata y cocina a fuego bajo, moviendo ocasionalmente.</li>
+                                <li>Sirve caliente, espolvorea con queso y acompaña con chips o tostadas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingTen">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                    10. Tazón de Yogurt Griego con Frutas y Granola (Desayuno/Snack Nutritivo)
+                </button>
+            </div>
+            <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>Yogurt Griego natural</li>
+                                <li>Frutas picadas (ej. fresas, plátano)</li>
+                                <li>Granola</li>
+                                <li>Miel (opcional)</li>
+                            </ul>
+                        <img src="static\img/tazon.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Coloca el yogurt en un tazón.</li>
+                                <li>Agrega las frutas y la granola por encima.</li>
+                                <li>Endulza con un poco de miel si lo deseas.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+        <a href="{{url_for('banco')}}" class="btn btn-success btn-lg w-100 fw-bold shadow">Volver al inicio</a>
+        </div>
+    </div>
+    <div class="mt-5 p-4 text-center rounded-3 shadow-sm">
+        <h4 class="fw-bold mb-0">👍¡Disfruta de estas recetas, y que habilites tus conocimientos en la cocina!👍</h4>
+        <p class="mb-0">¡Buen provecho!</p>
+    </div>
+
+</div>
+{% endblock content %}

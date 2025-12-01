@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Banco de Recetas{% endblock title %}
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="display-5 fw-bolder text-success mb-2">
+                🥗 Banco de Recetas Saludables 🥗
+            </h1>
+            <p class="lead text-muted">
+                Encuentra un platillo fácil, rápido y nutritivo.
+            </p>
+        </div>
+    </div>      
+            <div class="d-flex flex-wrap gap-2 mb-4 justify-content-start">
+                <a href="{{ url_for('recetas') }}" class="btn btn-outline-success btn-lg fw-bold  shadow-sm">
+                    🔍 Analizador de recetas 🔍
+                </a>
+                <a href="{{ url_for('principiantes') }}" class="btn btn-outline-success btn-lg fw-bold  shadow-sm">
+                🍳 Recetas para principiantes 🍳
+                </a>
+                <a href="{{ url_for('mealpreap') }}" class="btn btn-outline-success btn-lg fw-bold  shadow-sm">
+                🥣  Preparación de comidas (Meal Prep) 🥣
+                </a>
+            </div>
+                        </div>
+{% endblock content %}

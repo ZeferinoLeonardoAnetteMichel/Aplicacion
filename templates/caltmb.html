@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}TMB{% endblock title %}
+{% block content %}
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+                <div class="card shadow-lg">
+                    
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 class="mb-0">Calculadora de TMB</h4>
+                        <h4 class="mb-0">(Tasa Metabólica Basal)</h4>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="peso" class="form-label fw-bold">Peso (kg):</label>
+                                <input type="number" class="form-control" id="peso" placeholder="Ej: 70" step="0.1" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="altura" class="form-label fw-bold">Altura (cm):</label>
+                                <input type="number" class="form-control" id="altura" placeholder="Ej: 175" step="1" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="edad" class="form-label fw-bold">Edad (años):</label>
+                                <input type="number" class="form-control" id="edad" placeholder="Ej: 30" step="1" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-bold d-block">Género:</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino" checked>
+                                    <label class="form-check-label" for="masculino">Hombre</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="femenino" value="femenino">
+                                    <label class="form-check-label" for="femenino">Mujer</label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success btn-lg" onclick="calcularTMB()">
+                                    Calcular TMB
+                                </button>
+                            </div>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                 <div class="card shadow-lg">
+                            <div class="text-center">
+                                <p class="lead fw-bold mb-1">Tu Tasa Metabólica Basal (TMB) es:</p>
+                                <div id="resultado-tmb" class="display-3 text-danger mb-2 fw-bolder">--</div>
+                                <p class="alert alert-light border fw-bold" id="informacion-tmb" role="alert">
+                                    Calorías que quemas en reposo.
+                                </p>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function calcularTMB() {
+            const peso = parseFloat(document.getElementById('peso').value); // en kg
+            const altura = parseFloat(document.getElementById('altura').value); // en cm
+            const edad = parseInt(document.getElementById('edad').value); // en años
+            const genero = document.querySelector('input[name="genero"]:checked').value;
+
+            const resultadoTmbDiv = document.getElementById('resultado-tmb');
+            const infoTmbDiv = document.getElementById('informacion-tmb');
+
+            // Validación de datos
+            if (isNaN(peso) || isNaN(altura) || isNaN(edad) || peso <= 0 || altura <= 0 || edad <= 0) {
+                resultadoTmbDiv.textContent = 'Error';
+                infoTmbDiv.textContent = 'Datos inválidos. Asegúrate de ingresar números positivos.';
+                infoTmbDiv.className = 'alert alert-danger fw-bold';
+                return;
+            }
+
+            // Fórmula de Mifflin-St Jeor:
+            // TMB = (10 * peso en kg) + (6.25 * altura en cm) - (5 * edad en años) + factor_género
+
+            let tmb = (10 * peso) + (6.25 * altura) - (5 * edad);
+
+            if (genero === 'masculino') {
+                // Factor para hombres: +5
+                tmb += 5;
+            } else {
+                // Factor para mujeres: -161
+                tmb -= 161;
+            }
+
+            const tmbRedondeado = Math.round(tmb);
+            
+            resultadoTmbDiv.textContent = tmbRedondeado + ' Kcal';
+            infoTmbDiv.textContent = 'Esta es la energía mínima que tu cuerpo necesita en reposo.';
+            infoTmbDiv.className = 'alert alert-success fw-bold';
+        }
+    </script>
+        {% endblock content %}

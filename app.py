@@ -114,7 +114,7 @@ def login():
         if check_password_hash(stored_password_hash, password):
             session["usuario_id"] = usuario[0]
             session["usuario_nombre"] = usuario[1]
-            session["usuario_email"] = usuario[2] 
+            session["usuario_email"] = usuario[2]  
             flash(f"¡Bienvenido, {usuario[1]}!", "success")
             return redirect(url_for("inicio"))
         else:
@@ -142,86 +142,6 @@ def close():
     flash("Sesión cerrada", "info")
     return redirect(url_for('inicio'))
 
-@app.route('/descubrete', methods=['GET','POST'])
-def descubrete():
-    if 'usuario_id' not in session:
-        flash('Inicia sesion para poder acceder', 'warning')
-        return redirect(url_for('login'))
-    usuario_nombre = session.get('usuario_nombre') 
-    if request.method == 'POST':
-        try:
-            peso = float(request.form['peso'])
-            estatura_metro = float(request.form['estatura'])
-            edad = int(request.form['edad'])
-            genero = request.form['genero']
-            actividad = float(request.form['actividad'])
-            imc = peso / (estatura_metro ** 2)
-            estatura_cm = estatura_metro * 100
-            if imc < 18.5:
-                clasificacion = "Bajo peso"
-            elif imc < 25:
-                clasificacion = "Normal"
-            elif imc < 30:
-                clasificacion = "Sobrepeso"
-            else:
-                clasificacion = "Obesidad"
-            if genero == "masculino":
-                tmb = (10 * peso) + (6.25 * estatura_cm) - (5 * edad) + 5
-            else:
-                tmb = (10 * peso) + (6.25 * estatura_cm) - (5 * edad) - 161
-            get = tmb * actividad
-            session['calculo_imc'] = round(imc, 2)
-            session['calculo_clasificacion'] = clasificacion
-            session['calculo_tmb'] = round(tmb, 2)
-            session['calculo_get'] = round(get, 2)
-            estatura_pulgadas = estatura_metro * 39.37
-            if genero == "masculino":
-                pci = 50 + 2.3 * (estatura_pulgadas - 60)
-            else:
-                pci = 45.5 + 2.3 * (estatura_pulgadas - 60)
-            session['calculo_pci'] = round(pci, 2)
-            proteinas = get * 0.25 / 4
-            carbs = get * 0.50 / 4
-            grasas = get * 0.25 / 9
-            session['macro_prot'] = round(proteinas, 1)
-            session['macro_carbs'] = round(carbs, 1)
-            session['macro_grasas'] = round(grasas, 1)
-            return redirect(url_for('resultado'))
-        except ValueError:
-            flash('Ingresar números válidos para peso, estatura y actividad.', 'danger')
-            return redirect(url_for('descubrete'))
-    return render_template('descubrete.html', usuario=usuario_nombre)
-
-@app.route('/resultado')
-def resultado():
-    if 'calculo_imc' not in session:
-        flash('No se encontraron resultados. Por favor, realiza un nuevo cálculo.', 'warning')
-        return redirect(url_for('descubrete'))
-
-    usuario_nombre = session.get('usuario_nombre') 
-    
-    imc = session.get('calculo_imc')
-    clasificacion = session.get('calculo_clasificacion')
-    tmb = session.get('calculo_tmb')
-    get = session.get('calculo_get')
-
-    pci = session.get('calculo_pci')
-    prot = session.get('macro_prot')
-    carbs = session.get('macro_carbs')
-    grasas = session.get('macro_grasas')
-
-    return render_template(
-        'resultado.html',
-        imc=imc,
-        clasificacion=clasificacion,
-        tmb=tmb,
-        get=get,
-        usuario=usuario_nombre,
-        pci=pci,
-        prot=prot,
-        carbs=carbs,
-        grasas=grasas
-    )
 
 @app.route('/perfil')
 def perfil():
@@ -234,10 +154,33 @@ def perfil():
         usuario_email=session.get('usuario_email')
     )
 
+@app.route('/banco')
+def banco():
+    return render_template('banco.html')
 
 @app.route('/guia')
 def guia():
     return render_template('guia.html')
+
+@app.route('/imc')
+def imc():
+    return render_template('calimc.html')
+
+@app.route('/tmb')
+def tmb():
+    return render_template('caltmb.html')
+
+@app.route('/gct')
+def gct():
+    return render_template('calgct.html')
+
+@app.route('/pci')
+def pci():
+    return render_template('calpci.html')
+
+@app.route('/mac')
+def mac():
+    return render_template('calmac.html')
 
 @app.route('/importancia')
 def importancia():
@@ -252,23 +195,27 @@ def etiqueta():
     return render_template('etiqueta.html')
 
 @app.route('/videos')
-def videos():
-    if 'usuario_id' not in session:
-        flash('Inicia sesion para poder acceder', 'warning')
-        return redirect(url_for('login'))
-    usuario_nombre = session.get('usuario_nombre') 
+def videos(): 
     return render_template('videos.html')
 
 @app.route('/edu')
 def articulo():
     return render_template('articulos.html')
 
+@app.route('/mealpreap')
+def mealpreap():
+    return render_template('mealpreap.html')
+
+@app.route('/principiantes')
+def principiantes():
+    return render_template('principiantes.html')
+
 @app.route('/recetas')
 def recetas():
     if 'usuario_id' not in session: 
         flash('Inicia sesion para poder acceder', 'warning')
         return redirect(url_for('login'))
-    usuario_nombre = session.get('usuario_nombre') 
+        usuario_nombre = session.get('usuario_nombre') 
     return render_template('recetas.html', meal=None, messages= get_flashed_messages(with_categories=True))
 
 @app.route('/search', methods=['POST'])

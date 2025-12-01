@@ -1,61 +1,112 @@
 {% extends "base.html" %}
 {% block title %}Guia{% endblock title %}
 {% block content %}
-<div class="card text-center">
-        <h5 class="card-header text-center bg-success text-white fs-3">
-        🫗🌾Importancia de la hidratacion y la fibra🌾🫗</h5>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
 
-        <div class="card-body">
-        <img src="static\img/hf.png" class="rounded" alt="..." width="300" height="300">
-        <p class="card-text text-center fst-italic fs-5">La hidratacion y las fibras</p>
-        
-        <h5 class="card-title text-bold fs-3">•Fibras</h5>
-        <h5 class="card-title text-bold fs-3">•Hidratacion</h5>
+            <div class="card shadow-lg border-0 rounded-4">
+                
+                <div class="card-header text-center bg-success text-white py-3">
+                    <h1 class="fs-3 fw-bold mb-0">
+                        🫗🌾 Importancia de la Hidratación y la Fibra 🌾🫗
+                    </h1>
+                </div>
 
-        <h5 class="card-title text-bold fs-4">FIBRAS:</h5>
-        <p class="card-text fst-italic fs-5">La fibra es fundamental para la salud, ya que promueve el 
-        buen funcionamiento intestinal, ayuda a mantener un peso saludable al aumentar la saciedad, y 
-        reduce el riesgo de enfermedades crónicas como la diabetes y cardiopatías. También puede ayudar 
-        a prevenir ciertos tipos de cáncer y mejorar la microbiota intestinal. </p>
-        <h5 class="card-title text-bold fs-4">BENEFICIOS</h5>
-        <p class="card-text fst-italic fs-5">•La fibra ayuda a tener heces suaves y voluminosas, lo que es 
-        beneficioso en condiciones como la enfermedad diverticular, las hemorroides y la constipación.</p>
-        <p class="card-text fst-italic fs-5">•Un aumento en el consumo de fibra en general, junto con una 
-        reducción en la densidad energética y en la ingesta de grasa, ayudan a prevenir el desarrollo de 
-        diabetes y contribuyen a la reducción de peso corporal.</p>
-        <p class="card-text fst-italic fs-5">•La fibra soluble puede disminuir las concentraciones del 
-        colesterol LDL. La fibra proveniente de cereales y granos enteros tiene un mayor efecto protector 
-        que la fibra proveniente de vegetales y frutas.</p>
-        <img src="static\img/hf2.png" class="rounded" alt="..." width="300" height="300">
+                <div class="card-body p-5">
+                    
+                    <div class="text-center mb-5 border-bottom border-warning pb-4">
+                        <img src="static\img/hf.png" class="img-fluid rounded-circle shadow-lg mb-4" alt="Imagen representativa de fibra y agua" style="max-width: 200px; height: 200px; object-fit: cover;">
+                        
+                        <p class="card-text fst-italic fs-5 text-muted">
+                            La hidratación y la fibra son dos pilares fundamentales de la nutrición que a menudo son subestimados, pero cuyo impacto en la digestión, el peso y la prevención de enfermedades crónicas es enorme.
+                        </p>
+                        
+                        <h2 class="fs-4 fw-bold mt-4 text-dark">
+                            Temas clave a explorar:
+                        </h2>
+                        <ul class="list-unstyled d-flex justify-content-center gap-4 fs-4 fw-bolder text-info">
+                            <li>• Fibras</li>
+                            <li>• Hidratación</li>
+                        </ul>
+                    </div>
+                    
+                    <hr class="my-5 opacity-25">
 
-        <h5 class="card-title text-bold fs-4">HIDRATACION:</h5>
-        <p class="card-text fst-italic fs-5">es crucial porque el agua es esencial para que el cuerpo 
-        funcione correctamente, ayudando a regular la temperatura, transportar nutrientes, eliminar 
-        desechos y mantener órganos y articulaciones lubricados. Una hidratación adecuada previene 
-        problemas de salud como fatiga, mareos, estreñimiento y cálculos renales, y es vital para el 
-        rendimiento físico y mental. </p>
-        <h5 class="card-title text-bold fs-4">BENEFICIOS</h5>
-        <p class="card-text fst-italic fs-5">•Contribuye a que los riñones funcionen bien. Algunos estudios indican que otro de los beneficios 
-            del agua es un menor riesgo de padecer algunos tipos de cáncer, como el de vejiga y colon. Esto se debe a que una hidratación 
-            adecuada repercute sobre el correcto funcionamiento de los riñones y del sistema inmunológico.</p>
-        <p class="card-text fst-italic fs-5">•Mejora el sistema inmunológico. Cuando el cuerpo recibe la cantidad de agua adecuada, mejora el 
-        sistema inmunológico. A nivel más específico, los beneficios de tomar agua permiten al organismo luchar contra enfermedades como la
-        gripe y contra los ataques al corazón. También contribuye de forma importante frente a otros problemas de salud como el reumatismo, la 
-        artritis, los cálculos renales, etc.</p>
-        <img src="static\img/hf3.png" class="rounded" alt="..." width="300" height="300">
+                    <div class="mb-5 border-start border-4 border-warning ps-4">
+                        <h3 class="fw-bold fs-3 text-warning mb-3">FIBRAS: 🍎</h3>
+                        
+                        <p class="card-text fs-5 text-dark">
+                            La fibra es fundamental para la salud, ya que promueve el buen funcionamiento intestinal, ayuda a mantener un peso saludable al aumentar la saciedad, y reduce el riesgo de enfermedades crónicas como la diabetes y cardiopatías. También puede ayudar a prevenir ciertos tipos de cáncer y mejorar la microbiota intestinal.
+                        </p>
+                        
+                        <h4 class="fw-bold fs-4 text-dark mt-4">BENEFICIOS CLAVE</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item fs-5 fst-italic border-start border-success border-3 ps-3">
+                                Salud Digestiva: La fibra ayuda a tener heces suaves y voluminosas, lo que es beneficioso en condiciones como la constipación, hemorroides y enfermedad diverticular.
+                            </li>
+                            <li class="list-group-item fs-5 fst-italic border-start border-success border-3 ps-3">
+                                Control de Peso y Azúcar: Un mayor consumo de fibra contribuye a la reducción de peso corporal y ayuda a prevenir el desarrollo de la diabetes.
+                            </li>
+                            <li class="list-group-item fs-5 fst-italic border-start border-success border-3 ps-3">
+                                Salud Cardiovascular: La fibra soluble puede disminuir las concentraciones del colesterol LDL (colesterol "malo").
+                            </li>
+                        </ul>
+                        
+                        <div class="text-center mt-4">
+                            <img src="static\img/hf2.png" class="img-fluid rounded shadow-sm" alt="Imagen representativa de alimentos ricos en fibra" style="max-width: 300px;">
+                        </div>
+                    </div>
 
-        <h5 class="text-center text-success fs-4">Toma más agua, come más fruta, sé más feliz</h5>
+                    <hr class="my-5 opacity-25">
 
-        <div class="text-center mt-5">
-            <p><a href="https://www.minsalud.gov.co/Paginas/Los-beneficios-en-salud-de-una-%C3%B3ptima-hidrataci%C3%B3n.aspx" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4" target="_blank">
-            Para mas informacion
-            </a></p>
-            <p><a href="https://ve.scielo.org/scielo.php?script=sci_arttext&pid=S0798-07522014000100011" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4" target="_blank">
-            Para mas informacion
-            </a></p>
-            <a href="http://127.0.0.1:5000/edu" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4">
-                VOLVER
-            </a>
+                    <div class="mb-5 border-start border-4 border-info ps-4">
+                        <h3 class="fw-bold fs-3 text-info mb-3">HIDRATACIÓN: 💦</h3>
+                        
+                        <p class="card-text fs-5 text-dark">
+                            El agua es crucial porque es esencial para que el cuerpo funcione correctamente, ayudando a regular la temperatura, transportar nutrientes, eliminar desechos y mantener órganos y articulaciones lubricados. Una hidratación adecuada es vital para el rendimiento físico y mental.
+                        </p>
+                        
+                        <h4 class="fw-bold fs-4 text-dark mt-4">BENEFICIOS CLAVE</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item fs-5 fst-italic border-start border-primary border-3 ps-3">
+                                Función Renal y Prevención: Contribuye al correcto funcionamiento de los riñones y se asocia con un menor riesgo de padecer algunos tipos de cáncer (vejiga y colon) y cálculos renales.
+                            </li>
+                            <li class="list-group-item fs-5 fst-italic border-start border-primary border-3 ps-3">
+                                Defensa del Organismo: Mejora el sistema inmunológico, permitiendo al organismo luchar mejor contra enfermedades como la gripe y otros problemas de salud.
+                            </li>
+                        </ul>
+
+                        <div class="text-center mt-4">
+                            <img src="static\img/hf3.png" class="img-fluid rounded shadow-sm" alt="Imagen representativa de la hidratación y el agua" style="max-width: 300px;">
+                        </div>
+                    </div>
+                    
+                    <hr class="my-5 border-success opacity-75">
+                    
+                    <div class="text-center p-4 bg-info bg-opacity-10 rounded-3">
+                        <h4 class="text-center fw-bold fs-4 text-success mb-4">
+                            "Toma más agua, come más fruta, sé más feliz"
+                        </h4>
+
+                        <p class="mb-3">
+                            <a href="https://www.minsalud.gov.co/Paginas/Los-beneficios-en-salud-de-una-%C3%B3ptima-hidrataci%C3%B3n.aspx" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold fs-5" target="_blank">
+                                🔗 Más información sobre Hidratación (Minsalud)
+                            </a>
+                        </p>
+                        <p class="mb-4">
+                            <a href="https://ve.scielo.org/scielo.php?script=sci_arttext&pid=S0798-07522014000100011" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold fs-5" target="_blank">
+                                🔗 Más información sobre Fibra (SciELO)
+                            </a>
+                        </p>
+                        
+                        <a href="http://127.0.0.1:5000/edu" class="btn btn-outline-success btn-lg mt-3 fw-bold">
+                            VOLVER A EDUCACIÓN
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>

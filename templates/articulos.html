@@ -1,51 +1,65 @@
 {% extends "base.html" %}
-{% block title %}Educacion{% endblock title %}
+{% block title %}Edu{% endblock title %}
+
 {% block content %}
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card border-success">
-      <img src="static\img/etiqueta.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center fs-3">🏷️Etiquetas Nutricionales🏷️</h5>
-        <a href="{{ url_for('etiqueta') }}" class="btn btn-success w-100 mt-3 fs-4">Da click para saber mas informacion</a>
-      </div>
+<div class="container my-5">
+    
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-success">🧠 Aprende y educate 🧠</h1>
+        <p class="lead text-muted">Aprende sobre como leer etiquetas,alimentación, desmiente mitos y optimiza tu salud.</p>
     </div>
-  </div>
-  <div class="col">
-    <div class="card border-success">
-      <img src="static\img/mito.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center fs-3">🥗Mitos y Verdades sobre las dietas de moda🥗</h5>
-        <a href="{{ url_for('mito') }}" class="btn btn-success w-100 mt-3 fs-4">Da click para saber mas informacion</a>
-      </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 justify-content-center">
+        
+        <div class="col">
+            <div class="card h-100 shadow-lg border-3 border-success rounded-4">
+                <img src="static\img/etiqueta.png" class="card-img-top rounded-top-4" alt="Imagen de Etiquetas Nutricionales">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center fs-3 fw-bold text-dark">🏷️ Etiquetas Nutricionales 🏷️</h5>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('etiqueta') }}" class="btn btn-success w-100 mt-3 fs-4 fw-bold">Da click para saber más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-3 border-success rounded-4">
+                <img src="static\img/mito.png" class="card-img-top rounded-top-4" alt="Imagen de Mitos y Verdades sobre dietas">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center fs-3 fw-bold text-dark">🥗 Mitos y Verdades sobre las dietas de moda 🥗</h5>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('mito') }}" class="btn btn-success w-100 mt-3 fs-4 fw-bold">Da click para saber más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-3 border-success rounded-4">
+                <img src="static\img/macro.png" class="card-img-top rounded-top-4" alt="Imagen de Macronutrientes">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center fs-3 fw-bold text-dark">🥚 Guía sobre macronutrientes y su función 🥚</h5>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('guia') }}" class="btn btn-success w-100 mt-3 fs-4 fw-bold">Da click para saber más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-3 border-success rounded-4">
+                <img src="static\img/hidra.png" class="card-img-top rounded-top-4" alt="Imagen de Fibra e Hidratación">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-center fs-3 fw-bold text-dark">🌾🫗 Importancia de la fibra y la hidratación 🫗🌾</h5>
+                    <div class="mt-auto">
+                        <a href="{{ url_for('importancia') }}" class="btn btn-success w-100 mt-3 fs-4 fw-bold">Da click para saber más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-  <div class="col">
-    <div class="card border-success">
-      <img src="static\img/macro.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center fs-3">🥚Guia sobre macronutrientes y su funcion🥚</h5>
-        <a href="{{ url_for('guia') }}" class="btn btn-success w-100 mt-3 fs-4">Da click para saber mas informacion</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card border-success">
-      <img src="static\img/hidra.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center fs-3">🌾🫗Importancia de la fibra y la hidratacion🫗🌾</h5>
-        <a href="{{ url_for('importancia') }}" class="btn btn-success w-100 mt-3 fs-4">Da click para saber mas informacion</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card border-success">
-      <img src="static\img/ejerc.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center fs-3">🏋️‍♀️Ejercicios basicos🏋️‍♀️</h5>
-        <a href="{{ url_for('videos') }}" class="btn btn-success w-100 mt-3 fs-4">Da click para saber mas informacion</a>
-      </div>
-    </div>
-  </div>
+    
 </div>
-{% endblock %}
+{% endblock content %}

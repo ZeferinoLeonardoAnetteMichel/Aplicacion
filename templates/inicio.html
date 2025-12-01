@@ -9,24 +9,115 @@
                     <img src="static\img/VitaPlena.png" class="rounded w-25" alt="VitaPlena">
                     <h2 class="mb-3 display-3 fw-bold text-success">🥗VitaPlena🥗</h2>
                 </div> 
-                
                 <div class="container mt-5 mb-5">
                     <div class="row">
                         <div class="col-md-8 mx-auto text-center">
                             <h1>Bienvenido</h1>
-                            <p class="fst-italic text-black lead fs-3">Este sitio te ofrece aprender mas sobre tu salud y a darte recomendaciones para un mejor futuro.
+                            <p class="card-text text-start text-dark mx-auto small text-justify fs-4">Este sitio te ofrece aprender mas sobre tu salud y a darte recomendaciones para un mejor futuro.
                                 Espero que disfrutes de este sitio y te sirva para lo que desees, tambien podras encontrar testimonios de personas que hablan sobre su historia
                                 y como lograron solucionarlo acerca de su nutricion. Y recuerda que debes
                             </p>
-                            <p class="fst-italic text-black lead fs-3">"Vivir una vida plena, sin restricciones y no estar temiendo por enfermedades que 
-                                nos dañen la salud"
+                            <p class="blockquote fst-italic mt-4 mb-4 fs-3 text-secondary">"Vivir una vida plena, sin restricciones y no estar temiendo por enfermedades que 
+                                nos dañen la salud nos hace feliz"
                             </p>
                             <a href="{{url_for('registro')}}" class="btn btn-success btn-lg">¿Quieres comenzar?</a>
                         </div>
-                                                    <a href="{{url_for('login')}}" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ya tienes una cuenta?</a>
+                        <p class="text-center mt-3">
+                            <a href="{{ url_for('login') }}" class="text-decoration-none text-success small fw-bold">
+                                ¿Ya tienes una cuenta?
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div> 
         </div>
     </div>
+     <hr class="my-5 border-success opacity-25">
+
+    <section class="container py-5">
+        <h2 class="text-center display-6 fw-bold text-dark mb-5 border-bottom pb-2 mx-auto" style="max-width: 500px;">
+            Historias de Éxito Reales 🌟
+        </h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-success border-start border-5 p-3">
+                    <div class="card-body">
+                        <p class="card-text fst-italic text-muted fs-4">"Gracias a VitaPlena, entendí que no se trata de dietas, sino de un estilo de vida. Me sirvio la información"</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 pt-0">
+                        <p class="mb-0 fw-bold text-success fs-4">- Martinez Esmeralda, 17 años</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-success border-start border-5 p-3">
+                    <div class="card-body">
+                        <p class="card-text fst-italic text-muted fs-4">"Las calculadoras me ayudaron a saber, lo que necesitaba y vivo de una buena vida gracias la app."</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 pt-0">
+                        <p class="mb-0 fw-bold text-success fs-3">- Borrego Yareli, 16 años</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-success border-start border-5 p-3">
+                    <div class="card-body">
+                        <p class="card-text fst-italic text-muted fs-4">"Los videos que muestran me sirven para activarme, al igual que sus recomendaciones en articulos y las calculadoras."</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 pt-0">
+                        <p class="mb-0 fw-bold text-success fs-3">- Antonio Jesus, 17 años</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-success border-start border-5 p-3">
+                    <div class="card-body">
+                        <p class="card-text fst-italic text-muted fs-4">"Con sus artículos aprendí a que no debo hacer caso a las dietas de internet, solo con conciencia."</p>
+                    </div>
+                    <div class="card-footer bg-white border-0 pt-0">
+                        <p class="mb-0 fw-bold text-success fs-4">- Burciaga Danna, 17 años</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <h2 class="text-center display-6 fw-bold text-dark mb-5">
+    Beneficios al iniciar sesion o al registrarse🔑
+        </h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="p-3 border rounded-3 border-success">
+                    <h3 class="fs-1 text-warning">📱</h3>
+                    <h4 class="fw-bold fs-5 text-success">Calculadoras</h4>
+                    <p class="small text-muted mb-0">IMC, TMB, GCT, PCI y MACRONUTRIENTES.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="p-3 border rounded-3 border-success">
+                    <h3 class="fs-1 text-warning">🏋️‍♀️</h3>
+                    <h4 class="fw-bold fs-5 text-success">Videos</h4>
+                    <p class="small text-muted mb-0">Encontraras videos para hacer activacion fisica y cuidar tu salud.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="p-3 border rounded-3 border-success">
+                    <h3 class="fs-1 text-warning">👤</h3>
+                    <h4 class="fw-bold fs-5 text-success">Perfil</h4>
+                    <p class="small text-muted mb-0">Tendras tu perfil,para ver tu informacion.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="p-3 border rounded-3 border-success">
+                    <h3 class="fs-1 text-warning">🍜</h3>
+                    <h4 class="fw-bold fs-5 text-success">Recetas</h4>
+                    <p class="small text-muted mb-0">Platos deliciosos, para hacer una rica comida.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     {% endblock content %}

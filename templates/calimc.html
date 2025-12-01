@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}IMC{% endblock title %}
+{% block content %}
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+                <div class="card shadow-lg ">
+                    
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 class="mb-0">Calculadora de IMC</h4>
+                        <h4 class="mb-0">(Índice de Masa Corporal)</h4>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="altura" class="form-label fw-bold">Altura (metros):</label>
+                                <input type="number" class="form-control" id="altura" placeholder="Ej: 1.75" step="0.01" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="peso" class="form-label fw-bold">Peso (kg):</label>
+                                <input type="number" class="form-control" id="peso" placeholder="Ej: 70" step="0.1" required>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success btn-lg" onclick="calcularIMC()">
+                                    Calcular IMC
+                                </button>
+                            </div>
+        </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+
+<div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+                <div class="card shadow-lg border-0">
+                            <div class="text-center">
+                                <p class="lead fw-bold mb-1">Tu IMC es:</p>
+                                <div id="resultado-imc" class="display-4 text-dark mb-2 fw-bolder">--</div>
+                                <p class="alert alert-info fw-bold" id="categoria-imc" role="alert">
+                                    Introduce tus datos.
+                                </p>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function calcularIMC() {
+            const altura = parseFloat(document.getElementById('altura').value);
+            const peso = parseFloat(document.getElementById('peso').value);
+
+            const resultadoImcDiv = document.getElementById('resultado-imc');
+            const categoriaImcDiv = document.getElementById('categoria-imc');
+
+            // Validación básica de datos
+            if (isNaN(altura) || isNaN(peso) || altura <= 0 || peso <= 0) {
+                resultadoImcDiv.textContent = 'Error';
+                categoriaImcDiv.textContent = 'Datos inválidos. Asegúrate de ingresar números positivos.';
+                categoriaImcDiv.className = 'alert alert-danger fw-bold';
+                return;
+            }
+
+            // Cálculo del IMC: peso / (altura * altura)
+            const imc = peso / (altura * altura);
+            const imcRedondeado = imc.toFixed(2);
+
+            resultadoImcDiv.textContent = imcRedondeado;
+
+            // Determinación de la categoría
+            let categoria = '';
+            let claseAlerta = 'alert fw-bold';
+
+            if (imc < 18.5) {
+                categoria = 'Bajo peso';
+                claseAlerta += ' alert-warning'; // Amarillo
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                categoria = 'Peso normal';
+                claseAlerta += ' alert-success'; // Verde
+            } else if (imc >= 25.0 && imc <= 29.9) {
+                categoria = 'Sobrepeso';
+                claseAlerta += ' alert-warning'; // Amarillo
+            } else { // imc >= 30.0
+                categoria = 'Obesidad';
+                claseAlerta += ' alert-danger'; // Rojo
+            }
+            // 
+
+            categoriaImcDiv.textContent = categoria;
+            categoriaImcDiv.className = claseAlerta; // Asigna las clases de Bootstrap
+        }
+    </script>
+    {% endblock content %}

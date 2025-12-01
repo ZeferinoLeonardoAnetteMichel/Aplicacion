@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}MACRONUTRIENTES{% endblock title %}
+{% block content %}
+<div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-lg border-0">
+                    
+                    <div class="card-header bg-success text-white text-center">
+                        <h4 class="mb-0">Calculadora de Macronutrientes</h4>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-4">
+                                <label for="pci" class="form-label fw-bold">Tu Ingesta Calórica Personalizada (PCI) en Kcal:</label>
+                                <input type="number" class="form-control" id="pci" placeholder="Ej: 2000" step="1" required>
+                                <div class="form-text">Calorías diarias totales que deseas distribuir.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="perfil" class="form-label fw-bold">Selecciona un Perfil de Distribución:</label>
+                                <label for="perfil" class="form-label fw-bold">Proteinas,Carbohidratos,Grasas</label>
+                                <select class="form-select" id="perfil" onchange="actualizarPorcentajes()" required>
+                                    <option value="" selected disabled>Elige un plan...</option>
+                                    <option value="30_40_30">Estándar Balanceado (30/40/30)</option>
+                                    <option value="40_30_30">Alto en Proteínas (40/30/30)</option>
+                                    <option value="20_50_30">Dieta Mediterránea (20/50/30)</option>
+                                    <option value="20_10_70">Keto/Muy Bajo Carb (20/10/70)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success btn-lg text-white" onclick="calcularMacros()">
+                                    Calcular Gramos
+                                </button>
+                            </div>
+ </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+<div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+                <div class="card shadow-lg border-0">
+                            <h5 class="text-center mb-3">Tu Plan de Gramos Diarios es:</h5>
+                            <div id="resultado-macros" class="bg-light text-start">
+                                <p class="mb-2 fw-bold text-dark">Proteínas:</p>
+                                <p class="mb-2 fw-bold text-dark">Carbohidratos:</p>
+                                <p class="mb-0 fw-bold text-dark">Grasas:</p>
+                            </div>
+                            
+                        </form>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        function actualizarPorcentajes() {
+            const perfilSelect = document.getElementById('perfil');
+            const displayDiv = document.getElementById('porcentajes-display');
+            const valor = perfilSelect.value;
+            if (valor) {
+                const [p, c, g] = valor.split('_');
+                displayDiv.innerHTML = `**Proteínas:** ${p}% | **Carbos:** ${c}% | **Grasas:** ${g}%`;
+                displayDiv.className = 'alert alert-primary text-center small';
+            } else {
+                displayDiv.innerHTML = '**Proteínas:** -% | **Carbos:** -% | **Grasas:** -%';
+                displayDiv.className = 'alert alert-secondary text-center small';
+            }
+        }
+        function calcularMacros() {
+            const pci = parseFloat(document.getElementById('pci').value);
+            const perfilValor = document.getElementById('perfil').value;
+            const resultadoDiv = document.getElementById('resultado-macros');
+            const totalKcalCheckDiv = document.getElementById('total-kcal-check');
+            const porcentajesDisplayDiv = document.getElementById('porcentajes-display');
+            if (isNaN(pci) || pci <= 0 || !perfilValor) {
+                porcentajesDisplayDiv.innerHTML = 'Error: Ingresa PCI y selecciona un perfil.';
+                porcentajesDisplayDiv.className = 'alert alert-danger text-center small';
+                resultadoDiv.innerHTML = '<p class="text-center text-danger">-- Error --</p>';
+                totalKcalCheckDiv.textContent = 'Total Kcal distribuidas: --';
+                return;
+            }
+            const [p_pct, c_pct, g_pct] = perfilValor.split('_').map(Number);
+            const kcalProteinas = pci * (p_pct / 100);
+            const kcalCarbohidratos = pci * (c_pct / 100);
+            const kcalGrasas = pci * (g_pct / 100);
+            const gramosProteinas = kcalProteinas / 4;
+            const gramosCarbohidratos = kcalCarbohidratos / 4;
+            const gramosGrasas = kcalGrasas / 9;
+            resultadoDiv.innerHTML = `
+                <p class="mb-2 fw-bold text-dark">Proteínas: <span class="float-end text-primary">${gramosProteinas.toFixed(1)} g</span></p>
+                <p class="mb-2 fw-bold text-dark">Carbohidratos: <span class="float-end text-primary">${gramosCarbohidratos.toFixed(1)} g</span></p>
+                <p class="mb-0 fw-bold text-dark">Grasas: <span class="float-end text-primary">${gramosGrasas.toFixed(1)} g</span></p>
+            `;
+            const totalKcal = Math.round(kcalProteinas + kcalCarbohidratos + kcalGrasas);
+            totalKcalCheckDiv.textContent = `Total Kcal distribuidas: ${totalKcal} Kcal`;
+            actualizarPorcentajes();
+        }
+    </script>
+        {% endblock content %}

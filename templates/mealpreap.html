@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}Meal Prep{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-success">🍽️ Receta para Cocina en Batch (Meal Prep) 🍽️</h1>
+        <p class="lead text-muted">La preparacion de la comida Batch, es recomendada ya que aparte de que es muy facil de hacer la receta, se puede complementar con otras comidas en la semana como por ejemplo, si hacemos pollo a la plancha lo que sobre lo podemos guardar para otro dia de la semana y ya no comerlo asi, sino en tacos o acompañado de otros ingredientes. Aqui te muestro algunas recetas que puedes realizar para ahorrarte tiempo.</p>
+    </div>
+    <div class="accordion" id="accordionExample">
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    1. Pollo Desmenuzado al Limón y Hierbas (Proteína Base) 🍗
+                </button>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1.5 kg de Pechugas de Pollo.</li>
+                                <li>1 taza de Caldo de Pollo o Agua.</li>
+                                <li>2 Cdas. de Jugo de Limón.</li>
+                                <li>1 Cda. de Hierbas secas (orégano, tomillo).</li>
+                                <li>Sal y Pimienta al gusto.</li>
+                            </ul>
+                            <img src="static\img/pollo.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación (Olla de Presión/Lenta):</h5>
+                            <ol>
+                                <li>Coloca todos los ingredientes en la olla.</li>
+                                <li>Cocina hasta que esté tierno (3-4h lento o 20 min. a presión).</li>
+                                <li>Desmenuza el pollo con dos tenedores y reserva el jugo de cocción.</li>
+                            </ol>
+                            <p class="mt-3 fst-italic"><p class="fw-bold">Usos:</p>Tacos, bowls, ensaladas o sándwiches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingTwo">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Quinoa o Arroz Integral (Grano Base Neutro)🌾
+                </button>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>2 tazas de Quinoa (o Arroz Integral).</li>
+                                <li>4 tazas de Agua o Caldo.</li>
+                                <li>1/2 cucharadita de Sal.</li>
+                            </ul>
+                        <img src="static\img/quino.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Enjuaga el grano.</li>
+                                <li>Hierve el líquido con sal. Agrega el grano, tapa y reduce el fuego.</li>
+                                <li>Cocina hasta que se absorba el agua (15-40 min, según el grano).</li>
+                                <li>Deja reposar 5 minutos tapado antes de aflojar con un tenedor.</li>
+                            </ol>
+                            <p class="mt-3 fst-italic"><p class="fw-bold">Usos:</p> Base para bowls, sustituto de arroz, ensaladas frías.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingThree">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Lentejas Hervidas Simples (Opción Vegetariana)🥣
+                </button>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>2 tazas de Lentejas Verdes o Pardas.</li>
+                                <li>6 tazas de Agua.</li>
+                                <li>1 hoja de Laurel (opcional).</li>
+                                <li>Sal (añadir al final).</li>
+                            </ul>
+                            <img src="static\img/lente.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Enjuaga las lentejas.</li>
+                                <li>Combina con agua y Laurel. Hierve y luego baja el fuego.</li>
+                                <li>Cocina por 20-30 minutos, o hasta que estén tiernas (no blandas).</li>
+                                <li>Cuela, desecha el Laurel y agrega sal.</li>
+                            </ol>
+                            <p class="mt-3 fst-italic"><p class="fw-bold">Usos:</p> Base para chili vegetariano, ensaladas, o como sustituto de carne.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingFour">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Mix de Vegetales Asados al Pesto (Guarnición)
+                </button>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 kg de Vegetales (brócoli, zanahoria, pimiento).</li>
+                                <li>2 Cdas. de Aceite de Oliva.</li>
+                                <li>1 Cda. de Pesto (listo o casero).</li>
+                                <li>Sal y Pimienta.</li>
+                            </ul>
+                        <img src="static\img/mix.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación (Horno):</h5>
+                            <ol>
+                                <li>Precalienta el horno a 200°C (400°F).</li>
+                                <li>Corta los vegetales en trozos uniformes.</li>
+                                <li>Mézclalos con aceite, pesto, sal y pimienta.</li>
+                                <li>Asa durante 20-25 minutos o hasta que estén tiernos.</li>
+                            </ol>
+                            <p class="mt-3 fst-italic"><p class="fw-bold">Usos:</p> Guarnición caliente, añadido a la quinoa, o en tortillas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-3 rounded-3 border-success">
+            <div class="card-header p-0" id="headingFive">
+                <button class="btn btn-block text-left w-100 p-3 fs-5 fw-bold d-flex justify-content-between align-items-center collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Huevos Duros Simples (Snack y Topping)🥚
+                </button>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Ingredientes:</h5>
+                            <ul>
+                                <li>1 Docena de Huevos.</li>
+                                <li>Agua y Hielo.</li>
+                            </ul>
+                        <img src="static\img/huevos.png" class="img-fluid d-block mx-auto rounded shadow" alt="Etiqueta nutricional de muestra de lasaña congelada" style="max-height: 200px;">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold text-success">Preparación:</h5>
+                            <ol>
+                                <li>Coloca los huevos en agua fría, lleva a ebullición.</li>
+                                <li>Retira del fuego, tapa y deja reposar exactamente 9-10 minutos.</li>
+                                <li>Transfiere inmediatamente a un bowl con agua helada para detener la cocción.</li>
+                            </ol>
+                            <p class="mt-3 fst-italic"><p class="fw-bold">Usos:</p> Snack rápido, ensalada, sándwich de huevo o como topping para bowls.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="mt-4">
+        <a href="{{url_for('banco')}}" class="btn btn-success btn-lg w-100 fw-bold shadow">Volver al inicio</a>
+                            </div>
+                    </div>
+    <div class=" mt-5  text-center rounded-3 shadow-sm">
+        <h4 class="fw-bold mb-0">💡 Consejo de Almacenamiento:</h4>
+        <p class="mb-0">Asegúrate de enfriar completamente los alimentos antes de sellarlos y refrigerarlos. Esto evita la condensación y ayuda a que se mantengan frescos por más tiempo.</p>
+    </div>
+
+</div>
+{% endblock content %}

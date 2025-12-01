@@ -1,70 +1,96 @@
 {% extends "base.html" %}
-{% block title %}Productos de la Tienda{% endblock title %}
+{% block title %}Analizador de Recetas{% endblock title %}
 {% block content %}
-    <div class="card shadow-lg rounded-3 mb-4 mx-auto" style="max-width: 600px; width: 100%;">
-        <div class="card-body">
-
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-
-            <p class="card-text fs-4 mb-4">Ingresa el nombre de la comida.</p>
-
-            <form action="{{ url_for('search_api_comida') }}" method="post" class="mt-3">
-                <div class="input-group mb-3">
-                    <input type="text" name="query" class="form-control" placeholder="Escribe:arrabiata,curry" aria-label="Nombre de la comida" aria-describedby="button-addon2">
-                    <button class="btn btn-success" type="submit" id="button-addon2">Buscar</button>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+            
+            <div class="card shadow-lg  mb-4 p-4 bg-white">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h1 class="fs-3 fw-bold mb-0">
+                        🔍 Analizador de Recetas 🔍
+                    </h1>
                 </div>
-            </form>
+                <div class="card-body">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show fw-bold" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <p class="card-text fs-5 mb-4 text-center text-muted">
+                        Ingresa el nombre del plato o receta que deseas analizar:
+                    </p>
+
+                    <form action="{{ url_for('search_api_comida') }}" method="post" class="mt-3">
+                        <div class="input-group input-group-lg shadow-sm">
+                            <input type="text" name="query" class="form-control rounded-start-pill" placeholder="Ej: arrabiata, curry, Apam balik" 
+                                aria-label="Nombre de la comida" aria-describedby="button-addon2">
+                            <button class="btn btn-success fw-bold rounded-end-pill px-4" type="submit" id="button-addon2">
+                                Buscar🔎
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-4">
+        <a href="{{url_for('banco')}}" class="btn btn-success btn-lg w-100 fw-bold shadow">Volver al inicio</a>
+                            </div>
         </div>
     </div>
-    
     {% if meal %}
-        <div class="card shadow-lg rounded-3 p-4 mt-4 mx-auto" style="max-width: 1000px; width: 100%;">
+        <div class="card shadow-xl  p-4 mt-5  bg-white">
             <div class="card-body">
-                <h2 class="card-title text-success text-center mb-4">{{ meal.strMeal }}</h2>
-                
-                <div class="row g-4">
+                <h2 class="card-title text-success text-center mb-5 display-5 fw-bolder">
+                    {{ meal.strMeal }}
+                </h2>
+                <div class="row g-5">
                     
-                    <div class="col-12 col-md-4">
-                        <img src="{{ meal.strMealThumb }}" alt="Imagen de {{ meal.strMeal }}" class="img-fluid rounded-3 shadow-sm mb-3">
+                    <div class="col-12 col-md-4 text-center">
+                        <img src="{{ meal.strMealThumb }}" alt="Imagen de {{ meal.strMeal }}" 
+                            class="img-fluid rounded-4 shadow-lg mb-3 " style="max-height: 250px;">
                         
-                        <div class="small mt-2">
-                            <p class="mb-1"> Categoría: {{ meal.strCategory }}</p> 
-                            <p class="mb-1">Área: {{ meal.strArea }}</p> 
+                        <div class="mt-4 bg-light p-3 shadow-sm">
+                            <h5 class="fw-bold text-success mb-2">Platillo</h5>
+                            <p class="mb-1 small">
+                                <span class="fw-bold text-dark">Categoría:</span> {{ meal.strCategory }}
+                            </p> 
+                            <p class="mb-0 small">
+                                <span class="fw-bold text-dark">Área/Origen:</span> {{ meal.strArea }}
+                            </p> 
                         </div>
                     </div>
                     
                     <div class="col-12 col-md-4">
-                        <h5 class="text-success mb-3">Ingredientes</h5>
+                        <h4 class="fw-bold text-success mb-3 border-bottom">Ingredientes</h4>
+                        <ul class="list-group list-group-flush small">
                             {% for i in range(1, 21) %}
                                 {% set ingredient = 'strIngredient' ~ i %}
                                 {% set measure = 'strMeasure' ~ i %}
                                 {% if meal[ingredient] and meal[ingredient].strip() %}
-                                    <li class="mb-1">
-                                       {{ meal[measure] }} {{ meal[ingredient] }}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center p-1 bg-transparent">
+                                        <span class="text-dark">{{ meal[ingredient] }}</span>
+                                        <span class="badge bg-warning text-dark rounded-pill fw-bold">{{ meal[measure] }}</span>
                                     </li> 
                                 {% endif %}
                             {% endfor %}
+                        </ul>
                     </div>
                     
                     <div class="col-12 col-md-4">
-                        <h5 class="text-success mb-3">Instrucciones</h5>
-                        <p class="small text-muted mb-4">
+                        <h4 class="fw-bold text-success mb-3 border-bottom pb-2">Instrucciones</h4>
+                        <p class="small text-muted mb-4 text-justify">
                             {{ meal.strInstructions | truncate(350, True) }}
                         </p>
-
                         {% if meal.strYoutube %} 
-                            <div>
-                                <a href="{{ meal.strYoutube }}" target="_blank" class="btn btn-danger btn-sm">
-                                    Ver Video de Receta
+                            <div class="mt-4">
+                                <a href="{{ meal.strYoutube }}" class="btn btn-danger btn-lg w-100 fw-bold shadow">
+                                    Ver Video de Receta en YouTube
                                 </a>
                             </div>
                         {% endif %}
@@ -73,8 +99,10 @@
             </div>
         </div>
     {% elif search_query %}
-        <div class="alert alert-warning mt-4 mx-auto" role="alert" style="max-width: 600px; width: 100%;">
-            No se encontraron resultados para su búsqueda.
+        <div class="alert alert-warning mt-5 mx-auto text-center fw-bold rounded-3 shadow-sm" role="alert" style="max-width: 600px; width: 100%;">
+            Lo sentimos, no se encontraron resultados para: {{ search_query }}.
+            <p class="small mt-2 mb-0">Intenta con nombres de platos más comunes o en inglés.</p>
         </div>
     {% endif %}
+</div>
 {% endblock content %}

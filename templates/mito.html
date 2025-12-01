@@ -1,81 +1,145 @@
 {% extends "base.html" %}
 {% block title %}Mito{% endblock title %}
 {% block content %}
-<div class="card">
-        <h5 class="card-header text-center bg-success text-white fs-3">
-        🤦‍♀️Mitos y verdades sobre las dietas de moda.🤦‍♀️</h5>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
 
-        <div class="card-body text-center">
-        <img src="static\img/dieta.png" class="rounded" alt="..." width="300" height="300">
-        <p class="card-text text-center fst-italic fs-5">Las dietas de moda a menudo prometen resultados 
-        rápidos, pero la mayoría son insostenibles y perjudiciales para la salud a largo plazo. 
-        Un mito es que estas dietas son la mejor manera de perder peso de forma permanente; la 
-        realidad es que suelen provocar un efecto rebote y no ofrecen una solución duradera. En 
-        cambio, una pérdida de peso saludable y sostenible se logra a través de una dieta equilibrada, 
-        con déficit calórico controlado y ejercicio físico regular. </p>
-        
-        <h5 class="card-title text-bold fs-3">🤔Si la etiqueta dice "sin grasa" (no-fat) o "con poca grasa" (low-fat ), puede comer todo lo que quiera y no subirá de peso.</h5>
-        <p class="card-text fst-italic fs-5">Muchos alimentos con poca grasa o sin grasa tienen azúcares 
-        añadidos, almidones o sal para compensar la reducción en grasa. Estos alimentos "maravilla" a 
-        menudo tienen la misma cantidad de calorías, o incluso más, que la versión regular.Revise la 
-        etiqueta de nutrición para saber cuántas calorías tiene cada porción. Asegúrese de revisar 
-        también el tamaño de la porción.</p>
-        <img src="static\img/dieta2.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="card-title text-bold fs-3">🤔Ayunar puede ayudarle a bajar de peso rápidamente.</h5>
-        <p class="card-text fst-italic fs-5"> Ayunar no es saludable si usted pasa hambre todo el día y 
-        luego culmina con una comida enorme que reemplaza todas las calorías que no comió antes. 
-        Comparados con las personas que pierden grasa al comer menos calorías, las personas que ayunan 
-        pierden más músculo que grasa.Examine su dieta diaria en busca de calorías vacías que pueda 
-        eliminar, como granos refinados y bebidas azucaradas. No elimine comidas por completo, 
-        especialmente si no cuenta con la supervisión de un médico.</p>
-        <img src="static\img/dieta3.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="card-title text-bold fs-4">🤔Comer por la noche lo hará aumentar de peso.</h5>
-        <p class="card-text fst-italic fs-5"> Las personas que comen tarde por la noche tienden a subir 
-        de peso. Una posible razón es que quienes comen tarde en la noche tienden a elegir refrigerios 
-        altos en calorías. Algunas personas que comen refrigerios tras la cena no duermen bien, lo que
-        puede llevar a antojos poco saludables al día siguiente.Si siente hambre tras la cena, limítese a 
-        comer refrigerios saludables como yogur con un contenido bajo de grasas o zanahorias bebé.</p>
-        <img src="static\img/dieta4.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="card-title text-bold fs-4">🤔Dieta Keto</h5>
-        <p class="card-text fst-italic fs-5">Plan dietético que se basa en incrementar el consumo de grasas saludables y disminuir el consumo de 
-        hidratos de carbono para entrar en un estado metabólico de cetosis. Así, el organismo empieza a usar la grasa como fuente de energía.
-        En los últimos tiempos, esta dieta ha ganado popularidad para perder peso, porque tiene múltiples 
-        ventajas y beneficios.Uno de los mitos entorno a la dieta keto es que es poco saludable y de baja 
-        calidad nutricional, pero esto solamente depende de los alimentos elegidos, ya que, si escogemos
-        proteínas magras, grasas insaturadas  y poca ingesta de frutas y verduras , obtendremos una dieta 
-        saludable y nutritiva.</p>
-        <img src="static\img/dieta5.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="card-title text-bold fs-4">🤔Dieta Vegetariana</h5>
-        <p class="card-text fst-italic fs-5">Las dietas vegetarianas varían en cuanto a los alimentos que 
-        incluyen y excluyen:Lactovegetarianas: incluyen leche y sus derivados.Ovovegetarianas: incluyen 
-        huevo.Lactoovovegetariana: incluye leche, sus derivados y huevo.Pescetariana: incluye pescado.
-        Veganas: que no incluyen ningún alimento de origen animal.Se necesita una suplementación, y no es
-        así en todos los casos,cada persona es distinta y puede tener diferentes aportes nutricionales 
-        antes de considerar una suplementación.</p>
-        <img src="static\img/dieta6.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="card-title text-bold fs-4">🤔Dieta Mediterránea</h5>
-        <p class="card-text fst-italic fs-5">Los alimentos de origen vegetal, como cereales integrales, 
-        verduras, legumbres, frutas, frutos secos, semillas, hierbas y especias son la base de la dieta. 
-        El aceite de oliva es la principal fuente de grasa agregada. Se incluyen con moderación el 
-        pescado, los mariscos, los lácteos y la carne de aves. Por el contrario, la carne roja y los 
-        dulces solo se comen ocasionalmente.La dieta mediterránea no está pensada para perder peso, 
-        aquellas personas que sientan que les sobran algunos kilillos pueden seguirla, pero no será 
-        garantía de bajar de peso, lo más importante en estos casos es que reduzcan la cantidad de grasas 
-        que toman. O  incluso no consumirla por mucho tiempo, lo cual es totalmente falso.</p>
-        <img src="static\img/dieta7.png" class="rounded" alt="..." width="300" height="300">
-        <h5 class="text-center text-success fs-4">Toma más agua, come más fruta, sé más feliz</h5>
+            <div class="card shadow-lg border-0 rounded-4">
+                
+                <div class="card-header text-center bg-success text-white py-3 rounded-top-4">
+                    <h1 class="fs-3 fw-bold mb-0">
+                        🤦‍♀️ Mitos y Verdades sobre las Dietas de Moda 🤦‍♀️
+                    </h1>
+                </div>
 
-        <div class="text-center mt-5">
-        <p><a href="https://medlineplus.gov/spanish/ency/patientinstructions/000895.htm" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4" target="_blank">
-        Para mas informacion
-        </a></p>
-        <p><a href="https://www.mediclarlab.com/blog/6-dietas-de-moda-sus-mitos-y-realidades" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4" target="_blank">
-        Para mas informacion
-        </a></p>
-        <a href="http://127.0.0.1:5000/edu" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fs-4">
-                VOLVER
-        </a>
+                <div class="card-body p-5">
+                    
+                    <div class="text-center mb-5 border-bottom border-warning pb-4">
+                        <img src="static\img/dieta.png" class="img-fluid rounded-circle shadow-lg mb-4" alt="Imagen representativa de dietas y mitos" style="max-width: 200px; height: 200px; object-fit: cover;">
+                        
+                        <p class="card-text fst-italic fs-5 text-muted">
+                            Las dietas de moda a menudo prometen resultados rápidos, pero la mayoría son insostenibles y perjudiciales para la salud a largo plazo. Un mito común es que son la mejor manera de perder peso de forma permanente; la realidad es que suelen provocar un efecto rebote y no ofrecen una solución duradera.
+                        </p>
+                        
+                        <p class="card-text fw-bold fs-5 text-success mt-3">
+                            En cambio, una pérdida de peso saludable y sostenible se logra a través de una dieta equilibrada, con déficit calórico controlado y ejercicio físico regular.
+                        </p>
+                    </div>
+                    
+                    <hr class="my-5 opacity-25">
+
+                    <div class="mb-5 p-4 rounded-3 border border-4 border-danger bg-danger-subtle">
+                        <h3 class="fw-bolder fs-3 text-danger mb-3">
+                            🤔 MITO: Si la etiqueta dice "sin grasa" o "con poca grasa", puede comer todo lo que quiera.
+                        </h3>
+                        
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            ❌ FALSO: Muchos alimentos con poca grasa o sin grasa tienen azúcares añadidos, almidones o sal para compensar la reducción en grasa. Estos alimentos "maravilla" a menudo tienen la misma cantidad de calorías, o incluso más, que la versión regular.
+                        </p>
+                        
+                        <div class="alert alert-light mt-3 p-3 small fw-bold">
+                            <span class="text-danger">VERDAD:</span> Siempre revise la etiqueta de nutrición para saber cuántas calorías tiene cada porción y el tamaño real de la porción.
+                        </div>
+                        <img src="static\img/dieta2.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa de alimentos sin grasa" style="max-width: 300px;">
+                    </div>
+
+                    <hr class="my-5 opacity-25">
+
+                    <div class="mb-5 p-4 rounded-3 border border-4 border-danger bg-danger-subtle">
+                        <h3 class="fw-bolder fs-3 text-danger mb-3">
+                            🤔 MITO: Ayunar puede ayudarle a bajar de peso rápidamente.
+                        </h3>
+                        
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            ❌ FALSO: Ayunar no es saludable si pasa hambre todo el día y luego culmina con una comida enorme que reemplaza todas las calorías que no comió antes. Las personas que ayunan sin supervisión pierden más músculo que grasa.
+                        </p>
+                        <div class="alert alert-light mt-3 p-3 small fw-bold">
+                            <span class="text-danger">VERDAD:</span> Examine su dieta diaria en busca de calorías vacías. No elimine comidas por completo, especialmente sin la supervisión de un médico.
+                        </div>
+                        <img src="static\img/dieta3.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa del ayuno" style="max-width: 300px;">
+                    </div>
+
+                    <hr class="my-5 opacity-25">
+
+                    <div class="mb-5 p-4 rounded-3 border border-4 border-danger bg-danger-subtle">
+                        <h3 class="fw-bolder fs-3 text-danger mb-3">
+                            🤔 MITO: Comer por la noche lo hará aumentar de peso.
+                        </h3>
+                        
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            ❌ FALSO: El problema principal no es la hora, sino la calidad de los alimentos. Quienes comen tarde en la noche tienden a elegir refrigerios altos en calorías y grasas, y la falta de sueño posterior puede provocar más antojos al día siguiente.
+                        </p>
+                        <div class="alert alert-light mt-3 p-3 small fw-bold">
+                            <span class="text-danger">VERDAD:</span> Si siente hambre tras la cena, limítese a comer refrigerios saludables como yogur con un contenido bajo de grasas o zanahorias bebé.
+                        </div>
+                        <img src="static\img/dieta4.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa de comer de noche" style="max-width: 300px;">
+                    </div>
+
+                    <h2 class="text-center display-6 fw-bold text-dark mt-5 mb-5 border-bottom border-success pb-2">
+                        Aclaraciones sobre Dietas Populares 🌟
+                    </h2>
+
+                    <div class="mb-5 border-start border-4 border-warning ps-4">
+                        <h3 class="fw-bold fs-3 text-warning mb-3">Dieta Keto (Cetogénica) 🥓</h3>
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            Plan dietético que se basa en incrementar el consumo de grasas saludables y disminuir los hidratos de carbono para entrar en un estado metabólico de cetosis (usar la grasa como fuente de energía).
+                        </p>
+                        <div class="alert alert-warning mt-3 p-3 small fw-bold">
+                            <span class="text-dark">ACLARACIÓN:</span> El mito de que es poco saludable depende de los alimentos elegidos. Si se escogen proteínas magras y grasas insaturadas, la dieta puede ser nutritiva. ¡La calidad de los alimentos es lo que cuenta!
+                        </div>
+                        <img src="static\img/dieta5.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa de la Dieta Keto" style="max-width: 300px;">
+                    </div>
+
+                    <div class="mb-5 border-start border-4 border-primary ps-4">
+                        <h3 class="fw-bold fs-3 text-primary mb-3">Dieta Vegetariana 🌱</h3>
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            Las dietas vegetarianas varían (Lacto, Ovo, Veganas, Pescetarianas). Estas dietas pueden ser muy saludables si se planifican bien.
+                        </p>
+                        <div class="alert alert-primary mt-3 p-3 small fw-bold">
+                            <span class="text-dark">ACLARACIÓN:</span> No siempre se necesita suplementación. Cada persona es distinta y el aporte nutricional debe evaluarse individualmente antes de considerar suplementos.
+                        </div>
+                        <img src="static\img/dieta6.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa de la Dieta Vegetariana" style="max-width: 300px;">
+                    </div>
+
+                    <div class="mb-5 border-start border-4 border-info ps-4">
+                        <h3 class="fw-bold fs-3 text-info mb-3">Dieta Mediterránea 🍇</h3>
+                        <p class="card-text fst-italic fs-5 text-dark">
+                            Los alimentos de origen vegetal (cereales integrales, verduras, frutas, aceite de oliva) son la base. Pescado, lácteos y aves se incluyen con moderación; carne roja y dulces, solo ocasionalmente.
+                        </p>
+                        <div class="alert alert-info mt-3 p-3 small fw-bold">
+                            <span class="text-dark">ACLARACIÓN:</span> La dieta mediterránea es un estilo de vida saludable, no una dieta estricta para perder peso. Las personas que busquen bajar de peso deben enfocarse en reducir la cantidad total de calorías, no solo en seguir el patrón.
+                        </div>
+                        <img src="static\img/dieta7.png" class="img-fluid rounded shadow-sm mt-3" alt="Imagen representativa de la Dieta Mediterránea" style="max-width: 300px;">
+                    </div>
+
+
+                    <hr class="my-5 border-success opacity-75">
+                    
+                    <div class="text-center p-4 bg-success bg-opacity-10 rounded-3">
+                        <h4 class="text-center fw-bold fs-4 text-success mb-4">
+                            Toma decisiones informadas, no modas.
+                        </h4>
+
+                        <p class="mb-3">
+                            <a href="https://medlineplus.gov/spanish/ency/patientinstructions/000895.htm" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold fs-5" target="_blank">
+                                🔗 Más información (MedlinePlus)
+                            </a>
+                        </p>
+                        <p class="mb-4">
+                            <a href="https://www.mediclarlab.com/blog/6-dietas-de-moda-sus-mitos-y-realidades" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold fs-5" target="_blank">
+                                🔗 Más información (Mediclar Lab)
+                            </a>
+                        </p>
+                        
+                        <a href="http://127.0.0.1:5000/edu" class="btn btn-outline-success btn-lg mt-3 fw-bold">
+                            VOLVER A EDUCACIÓN
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
-</div>
+    </div>
 </div>
 {% endblock content %}
