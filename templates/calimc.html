@@ -61,7 +61,6 @@
             const resultadoImcDiv = document.getElementById('resultado-imc');
             const categoriaImcDiv = document.getElementById('categoria-imc');
 
-            // Validación básica de datos
             if (isNaN(altura) || isNaN(peso) || altura <= 0 || peso <= 0) {
                 resultadoImcDiv.textContent = 'Error';
                 categoriaImcDiv.textContent = 'Datos inválidos. Asegúrate de ingresar números positivos.';
@@ -69,33 +68,31 @@
                 return;
             }
 
-            // Cálculo del IMC: peso / (altura * altura)
             const imc = peso / (altura * altura);
             const imcRedondeado = imc.toFixed(2);
 
             resultadoImcDiv.textContent = imcRedondeado;
 
-            // Determinación de la categoría
             let categoria = '';
             let claseAlerta = 'alert fw-bold';
 
             if (imc < 18.5) {
                 categoria = 'Bajo peso';
-                claseAlerta += ' alert-warning'; // Amarillo
+                claseAlerta += ' alert-warning'; 
             } else if (imc >= 18.5 && imc <= 24.9) {
                 categoria = 'Peso normal';
-                claseAlerta += ' alert-success'; // Verde
+                claseAlerta += ' alert-success'; 
             } else if (imc >= 25.0 && imc <= 29.9) {
                 categoria = 'Sobrepeso';
-                claseAlerta += ' alert-warning'; // Amarillo
-            } else { // imc >= 30.0
+                claseAlerta += ' alert-warning'; 
+            } else { 
                 categoria = 'Obesidad';
-                claseAlerta += ' alert-danger'; // Rojo
+                claseAlerta += ' alert-danger';
             }
             // 
 
             categoriaImcDiv.textContent = categoria;
-            categoriaImcDiv.className = claseAlerta; // Asigna las clases de Bootstrap
+            categoriaImcDiv.className = claseAlerta; 
         }
     </script>
     {% endblock content %}
