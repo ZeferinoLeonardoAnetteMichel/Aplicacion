@@ -70,15 +70,14 @@
     </div>
     <script>
         function calcularTMB() {
-            const peso = parseFloat(document.getElementById('peso').value); // en kg
-            const altura = parseFloat(document.getElementById('altura').value); // en cm
-            const edad = parseInt(document.getElementById('edad').value); // en años
+            const peso = parseFloat(document.getElementById('peso').value); 
+            const altura = parseFloat(document.getElementById('altura').value);
+            const edad = parseInt(document.getElementById('edad').value); 
             const genero = document.querySelector('input[name="genero"]:checked').value;
 
             const resultadoTmbDiv = document.getElementById('resultado-tmb');
             const infoTmbDiv = document.getElementById('informacion-tmb');
 
-            // Validación de datos
             if (isNaN(peso) || isNaN(altura) || isNaN(edad) || peso <= 0 || altura <= 0 || edad <= 0) {
                 resultadoTmbDiv.textContent = 'Error';
                 infoTmbDiv.textContent = 'Datos inválidos. Asegúrate de ingresar números positivos.';
@@ -86,16 +85,12 @@
                 return;
             }
 
-            // Fórmula de Mifflin-St Jeor:
-            // TMB = (10 * peso en kg) + (6.25 * altura en cm) - (5 * edad en años) + factor_género
 
             let tmb = (10 * peso) + (6.25 * altura) - (5 * edad);
 
             if (genero === 'masculino') {
-                // Factor para hombres: +5
                 tmb += 5;
             } else {
-                // Factor para mujeres: -161
                 tmb -= 161;
             }
 
