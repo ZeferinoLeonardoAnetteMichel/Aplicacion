@@ -80,7 +80,6 @@
             const resultadoPciDiv = document.getElementById('resultado-pci');
             const infoPciDiv = document.getElementById('informacion-pci');
 
-            // Validación de datos
             if (isNaN(gct) || gct <= 0) {
                 resultadoPciDiv.textContent = 'Error';
                 infoPciDiv.textContent = 'Datos inválidos. Asegúrate de ingresar tu GCT.';
@@ -88,7 +87,6 @@
                 return;
             }
 
-            // Cálculo del PCI: GCT + Ajuste
             const pci = gct + ajuste;
             const pciRedondeado = Math.round(pci);
 
@@ -108,7 +106,7 @@
                 mensaje = `Para **Ganar Peso/Músculo** (superávit), consume aproximadamente ${pciRedondeado} Kcal.`;
             }
             
-            infoPciDiv.innerHTML = mensaje; // Usar innerHTML para el bold
+            infoPciDiv.innerHTML = mensaje; 
             infoPciDiv.className = claseAlerta;
         }
     </script>
